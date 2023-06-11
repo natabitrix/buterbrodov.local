@@ -1,0 +1,112 @@
+@@include('_common/header.html', {
+    "class": " recepie-detail-page",
+    })
+    
+    
+    <main class="main">
+        <div class="recepie-detail">
+            <div class="recepie-detail__top">
+                <div class="recepie-detail__top-img">
+                    <img src="@img/recepie-detail/1.png" alt="">
+                </div>
+                <div class="recepie-detail__top-text">
+                    <div class="container">
+                        <h1>Тонкие блинчики
+                            с маслом Бутербродов</h1>
+                        <div class="time">
+                            1 ч 25 мин
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="recepie-detail__content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 recepie-detail__col-left">
+                            <div class="recepie-detail__ingredients">
+                                <div class="recepie-detail__ingredients-name">Ингредиенты</div>
+
+                                <dl class="recepie-detail__ingredients-list row">
+                                    <dt class="col-6">молоко</dt><dd class="col-6">50 мл</dd>
+                                    <dt class="col-6">яйца</dt><dd class="col-6">3 шт</dd>
+                                    <dt class="col-6">масло сливочное Бутербродов</dt><dd class="col-6"> 2 ст. ложки</dd>
+                                    <dt class="col-6">молоко</dt><dd class="col-6">50 мл</dd>
+                                    <dt class="col-6">яйца</dt><dd class="col-6">3 шт</dd>
+                                    <dt class="col-6">масло сливочное</dt><dd class="col-6"> 2 ст. ложки</dd>
+
+                                </dl>
+
+                            </div>
+                            <div class="animations__decor">
+                                <div class="animations__decor-speak animations__speak animate-in-view">
+                                    У тебя получится!
+                                </div>
+                                <div class="animations__decor-cow">
+                                    <div class="animations__cow2 animations__cow_stand">
+                                        @@include('animations/cow2.svg.html')
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8 recepie-detail__col-right">
+                            <div class="recepie-detail__col-right-text">
+                                <h4>Шаг 1</h4>
+                                <p>Отделить желтки и смешать их с сахаром и солью. Добавить к желткам 0,5 стакана молока. Взбить вилкой.</p>
+                                <h4>Шаг 2</h4>
+                                <p>Постепенно добавлять муку, тщательно перемешивать. Получится довольно густое тесто.</p>
+                                <h4>Шаг 1</h4>
+                                <p>Отделить желтки и смешать их с сахаром и солью. Добавить к желткам 0,5 стакана молока. Взбить вилкой.</p>
+                                <h4>Шаг 2</h4>
+                                <p>Постепенно добавлять муку, тщательно перемешивать. Получится довольно густое тесто.</p>
+                                <h4>Шаг 1</h4>
+                                <p>Отделить желтки и смешать их с сахаром и солью. Добавить к желткам 0,5 стакана молока. Взбить вилкой.</p>
+                                <h4>Шаг 2</h4>
+                                <p>Постепенно добавлять муку, тщательно перемешивать. Получится довольно густое тесто.</p>
+                                <h4>Шаг 1</h4>
+                                <p>Отделить желтки и смешать их с сахаром и солью. Добавить к желткам 0,5 стакана молока. Взбить вилкой.</p>
+                                <h4>Шаг 2</h4>
+                                <p>Постепенно добавлять муку, тщательно перемешивать. Получится довольно густое тесто.</p>
+
+                                
+                            </div>
+
+                                <div class="recepie-list">
+                                    <div class="h2">Другие рецепты</div>
+                                    <div class="row">
+                    
+                                        @@include('include/recepie-item.html', {
+                                        "img": "1.jpg",
+                                        "date": '26 февраля, 2023',
+                                        "h1": 'Масленица вкуснее с Бутербродов!',
+                                        "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                                        })
+                    
+                                        @@include('include/recepie-item.html', {
+                                        "img": "2.jpg",
+                                        "date": '26 февраля, 2023',
+                                        "h1": '2 Натуральные продукты с зеленых',
+                                        "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                                        })
+                        
+
+                                    </div>
+                        
+                                </div>
+
+
+
+
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    
+    
+    
+    @@include('_common/footer.html')

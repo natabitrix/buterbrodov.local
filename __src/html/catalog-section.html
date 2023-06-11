@@ -1,0 +1,180 @@
+@@include('_common/header.html', {
+"class": " catalog-page catalog-section-page theme-blue",
+})
+
+<div class="decor">
+    <div class="decor-top d-none d-lg-block"  data-hs="fade down" style="--hs-delay: 0ms; --hs-translate-ratio: 10; ">
+        <img src="@img/catalog-section/decor-top.png" alt="">
+    </div>
+</div>
+
+<main class="main">
+    <div class="text-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-lg-6 col-xxxl-5 col-decor">
+                    <div class="decor">
+                        <div class="decor-left decor-left1 d-none d-lg-block" data-hs="fade right blur" style="--hs-blur: 15px; --hs-rotate: -45deg; --hs-delay: 500ms; --hs-translate-ratio: 10; --hs-duration-ratio: 2;">
+                            <img src="@img/catalog-section/maslo.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 col-lg-6 col-xxxl-7 col-text">
+                    <div class="logo">
+                        <a href=""><img src="@img/category/1.svg" alt=""></a> 
+                    </div>
+                    <div class="position-relative">
+                        <div class="animations__decor d-none d-md-block">
+                            <div class="animations__decor-cow animations__cow1 animations__cow_stand d-none d-md-block">
+                                @@include('animations/cow1.svg.html')
+                            </div>
+                        </div>
+
+                        <div class="h2 black">Миссия бренда</div>
+                        <div class="text">
+                            Обеспечить современных, активных, социально вовлеченных молодых людей вкусными продуктами
+                            питания по удобной цене. Предложить ассортиментный выбор, ориентируясь на «эмоциональный»
+                            характер покупки.
+                        </div>
+                        <div class="h2 decorate">Уникальность</div>
+                        <div class="text">
+                            ТМ «БУТЕРБРОДОВ» - продуктовый бренд новой формации и нового поколения, ведущий «диалог» с
+                            потребителем, который уже привык к классической сырно-молочной полке и готов к новым, ярким
+                            впечатлениям. Радует качеством продуктов, дарит хорошее настроение и оптимизм своим внешним
+                            видом.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="decor">
+            <div class="decor-right decor-right1 d-none d-md-block" data-hs="fade left" style="--hs-delay: 1000ms; --hs-translate-ratio: 10; --hs-duration-ratio: 2;">
+                <img src="@img/catalog-section/decor-right1.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div id="products"></div>
+    <div class="filter">
+        <div class="container">
+            <div class="filter__items">
+                <div class="filter__item">
+                    <a href="#products">
+                        <div class="filter__item-icon hover-bg-yellow active-bg-yellow">
+                            <img src="@img/icons/catalog/maslo.svg" alt="">
+                        </div>
+                        <div class="filter__item-name">
+                            Масло сливочное
+                        </div>
+                    </a>
+                </div>
+                <div class="filter__item">
+                    <a href="#products">
+                        <div class="filter__item-icon hover-bg-violet active-bg-violet">
+                            <img src="@img/icons/catalog/smetana.svg" alt="">
+                        </div>
+                        <div class="filter__item-name">
+                            Сметана, майонез
+                        </div>
+                    </a>
+                </div>
+                <div class="filter__item active">
+
+                    <div class="filter__item-icon hover-bg-blue active-bg-blue active">
+                        <img src="@img/icons/catalog/tvorog.svg" alt="">
+                    </div>
+                    <div class="filter__item-name">
+                        Творог, творожная масса
+                    </div>
+                </div>
+                <div class="filter__item">
+                    <a href="#products">
+                        <div class="filter__item-icon hover-bg-dark_yellow active-bg-dark_yellow">
+                            <img src="@img/icons/catalog/syry.svg" alt="">
+                        </div>
+                        <div class="filter__item-name">
+                            Сыры твердые, мягкие, копченые
+                        </div>
+                    </a>
+                </div>
+                <div class="filter__item">
+                    <a href="#products">
+                        <div class="filter__item-icon hover-bg-green active-bg-green">
+                            <img src="@img/icons/catalog/snake.svg" alt="">
+                        </div>
+                        <div class="filter__item-name">
+                            Снеки, закуски
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="products">
+        <div class="decor">
+            <div class="decor-left decor-left1" data-hs="fade right" style="--hs-delay: 0ms; --hs-translate-ratio: 10; --hs-duration-ratio: 2;">
+                <img src="@img/catalog-section/decor-left2.png" alt="">
+            </div>
+            
+            <div class="decor-right decor-right1 d-none d-sm-block" data-hs="fade left" style="--hs-delay: 500ms; --hs-translate-ratio: 10; --hs-duration-ratio: 2;">
+                <img src="@img/catalog-section/decor-right2.png" alt="">
+            </div>
+        </div>
+
+        <div class="products-wrapper">
+            <div class="products-inner">
+                <div class="container">
+                    <div class="h2">Продукция</div>
+                    <div class="product-list row">
+                        @@include('include/catalog-product-item.html', {
+                                "id": "1",
+                                "img": "1.png",
+                                "name": 'Масло Крестьянское "Бутербродов"',
+                                "icon": 'new.svg',
+                            })
+                            @@include('include/catalog-product-item.html', {
+                                "id": "2",
+                                "img": "2.png",
+                                "name": 'Масло Крестьянское "Бутербродов"',
+                                "icon": 'gost.svg',
+                            })
+                            @@include('include/catalog-product-item.html', {
+                                "id": "3",
+                                "img": "3.png",
+                                "name": 'Масло Крестьянское "Бутербродов"',
+                                "icon": '',
+                            })
+                            @@include('include/catalog-product-item.html', {
+                                "id": "4",
+                                "img": "4.png",
+                                "name": 'Масло Крестьянское "Бутербродов"',
+                                "icon": '',
+                            })
+                            @@include('include/catalog-product-item.html', {
+                                "id": "5",
+                                "img": "2.png",
+                                "name": 'Масло Крестьянское "Бутербродов"',
+                                "icon": 'gost.svg',
+                            })
+                            @@include('include/catalog-product-item.html', {
+                                "id": "6",
+                                "img": "3.png",
+                                "name": 'Масло Крестьянское "Бутербродов"',
+                                "icon": '',
+                            })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+
+
+
+@@include('_common/footer.html')

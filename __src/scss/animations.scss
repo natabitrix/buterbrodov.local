@@ -1,0 +1,545 @@
+@use 'sass:math';
+
+
+$cow_delay: .1;
+$cow_duration: 1;
+$cow_duration_mobile: 2;
+
+$center_window: math.div(100vw, 2);
+
+
+$logo_margin: 14px;
+
+$cow_width: 130px;
+$logo_width: 170px;
+
+$cow_width_xl: 240px;
+$logo_width_xl: 220px;
+
+$cow_width_xxl: 260px;
+$logo_width_xxl: 240px;
+
+
+$moving_stop: calc($center_window - $logo_width - $logo_margin);
+
+$moving_stop_xl: calc($center_window - $logo_width_xl*2 - $logo_margin*2 - $cow_width_xl);
+$moving_stop_xxl: calc($center_window - $logo_width_xxl*2 - $logo_margin*2 - $cow_width_xxl);
+
+.animations {
+
+    &__cow1,
+    &__cow1-2,
+    &__cow2,
+    &__logo,
+    &__other-logo,
+    &__cow .leg,
+    &__cow-2 .leg,
+    &__cow .hvost,
+    &__cow-2 .hvost,
+    &__cow2 .eye,
+    &__cow3 .eye-close {
+        position: absolute;
+        animation-timing-function: ease-in;
+        animation-duration: #{$cow_duration}s;
+        animation-fill-mode: forwards;
+        animation-delay: #{$cow_delay}s;
+    }
+
+    &__cow1,
+    &__logo {
+        position: relative;
+        transform: translate(-530px, 0px);
+        animation-name: moving;
+        @include media-breakpoint-up(xl) {
+            animation-name: moving_xl;
+        }
+        @include media-breakpoint-up(xxl) {
+            animation-name: moving_xxl;
+        }
+    }
+
+    &__cow1{
+        left: 52px;
+        margin-top: 10px;
+        position: absolute;
+
+        @include media-breakpoint-up(xl) {
+            left: 8px;
+            margin-top: 0;
+            position: relative;
+        }
+
+        .leg{
+            transform-origin: top;
+            transform-box: fill-box;
+            animation-iteration-count: 5;
+            animation-duration: 0.3s;
+            animation-delay:0;
+        }
+    
+        .leg_l {
+            transform-origin: top right;
+            transform: rotate(10deg);
+            animation-name: leg_l;
+        }
+    
+        .leg_r {
+            transform-origin: top left;
+            transform: rotate(-10deg);
+            animation-name: leg_r;
+        }
+    }
+
+
+    
+
+
+    &__cow1-2 {
+        // transform: translate(-530px, 0px);
+        left: -500px;
+
+        .leg {
+            transform-origin: top;
+            transform-box: fill-box;
+            animation-duration: 0.3s;
+            animation-delay:0;
+            animation-iteration-count: 5;
+        }
+        .leg_l {
+            transform-origin: top right;
+            transform: rotate(10deg);
+        }
+        .leg_r {
+            transform-origin: top left;
+            transform: rotate(-10deg);
+        }
+        .in-view & {
+            animation-name: moving_right;
+            .leg_l {
+                animation-name: leg_l;
+            }
+            .leg_r {
+                animation-name: leg_r;
+            }
+
+            @include media-breakpoint-up(xl) {
+                // animation-name: moving_xl;
+            }
+            @include media-breakpoint-up(xxl) {
+                // animation-name: moving_xxl;
+            }
+    
+        }
+
+
+        @include media-breakpoint-up(xl) {
+            // left: 8px;
+            // margin-top: 0;
+            // position: relative;
+        }
+        .leg{
+            
+        }
+    }
+
+
+    &__cow_stand{
+        position: relative!important;
+        transform: translate(0px, 0px)!important;
+        left:0!important;
+        bottom:0!important;
+        top:0!important;
+        right:0!important;
+        animation-name:none!important;
+        .leg{
+            animation-name:none!important;
+        }
+    }
+
+
+    &__logo {}
+
+    &__other-logo {
+        position: relative;
+        // opacity: 0;
+        // transform: translate(-300px, 0px);
+        left: -500px;
+        width: 0px;
+        overflow: hidden;
+        animation-name: moving_right;
+        animation-duration: .7s;
+
+
+        &:nth-child(2) {
+            // animation-delay: #{$cow_delay+$cow_duration+.3}s;
+            animation-delay: #{$cow_delay+.3}s;
+        }
+
+        &:nth-child(3) {
+            // animation-delay: #{$cow_delay+$cow_duration+.3+.3}s;
+            animation-delay: #{$cow_delay+.6}s;
+        }
+
+        &:nth-child(4) {
+            // animation-delay: #{$cow_delay+$cow_duration+.3+.6}s;
+            animation-delay: #{$cow_delay+.9}s;
+        }
+    }
+
+    &__cow2 {
+        position: absolute;
+        right: auto;
+        left: 50%;
+        bottom: 20px;
+        margin-left: 70px;
+        transform: translate(300px, 0px);
+        // animation-delay: #{$cow_delay+1.2}s;
+        animation-delay: #{$cow_delay}s;
+        animation-duration:.4s;
+        animation-name: moving_left;
+
+        @include media-breakpoint-up(xl) {
+            bottom: -120px;
+            right: 0;
+            left: auto;
+            margin: 0;
+            transform: translate(300px, 0px);
+            animation-name: moving_left_xl;
+        }
+
+        @include media-breakpoint-up(xxl) {
+            animation-name: moving_left_xxl;
+        }
+
+        @include media-breakpoint-up(xxxl) {
+            animation-name: moving_left_xxxl;
+        }
+
+
+    }
+
+
+    &__cow2 .eye {
+        transform-origin: top;
+        transform-box: fill-box;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+
+        &-left {
+            animation-name: eye_left;
+        }
+
+        &-right {
+            animation-name: eye_right;
+        }
+    }
+
+    &__cow3 .eye-close {
+        transform-origin: top left;
+        transform-box: fill-box;
+        animation-iteration-count: infinite;
+        animation-duration: 2.0s;
+        animation-name: eye_close;
+        overflow: hidden;
+        height: 0px;
+        &-left {
+
+        }
+
+        &-right {
+        }
+    }
+
+
+    &__cow1 .hvost,
+    &__cow1-2 .hvost {
+        transform-origin: top;
+        transform-box: fill-box;
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+        animation-name: hvost;
+    }
+
+    &__speak {
+
+        $speak_duration: .3;
+        $letters_delay: 0.04;
+
+        animation-timing-function: ease-in;
+        animation-duration: #{$speak_duration}s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        transform: translate(-17px, 32px) scale(.5);
+
+        span {
+            animation-timing-function: step-end;
+            animation-duration: .4s;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+        &.in-view, .swiper-slide-active &{
+
+            animation-name: show_speak;
+            span {
+                animation-name: showing;
+
+                @for $i from 1 through 20 {
+                    &:nth-child(#{$i}) {
+                        animation-delay: #{$speak_duration+$i*$letters_delay}s;
+                    }
+                }
+            }
+        }
+
+    }
+
+}
+
+@keyframes moving {
+    0% {
+        transform: translate(-300px, 0px);
+    }
+
+    100% {
+        transform: translate($moving_stop, 0px);
+    }
+}
+
+@keyframes moving_xl {
+    0% {
+        transform: translate(-530px, 0px);
+    }
+
+    100% {
+        transform: translate($moving_stop_xl, 0px);
+    }
+}
+
+@keyframes moving_xxl {
+    0% {
+        transform: translate(-530px, 0px);
+    }
+
+    100% {
+        transform: translate($moving_stop_xxl, 0px);
+    }
+}
+
+@keyframes moving_left {
+    0% {
+        transform: translate(300px, 0px);
+    }
+
+    100% {
+        transform: translate(-30px, 0px);
+    }
+}
+
+@keyframes moving_left_xl {
+    0% {
+        transform: translate(300px, 0px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes moving_left_xxl {
+    0% {
+        transform: translate(300px, 0px);
+    }
+
+    100% {
+        transform: translate(-50px, 0px);
+    }
+}
+
+@keyframes moving_left_xxxl {
+    0% {
+        transform: translate(300px, 0px);
+    }
+
+    100% {
+        transform: translate(-170px, 0px);
+    }
+}
+
+
+@keyframes moving_right {
+    0% {
+        left:-500px;
+        width:0px;
+    }
+
+    100% {
+        left: 0;
+        width: auto;
+    }
+}
+
+
+@keyframes showing {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes fade {
+    0%, 40% { 
+        opacity: 0;
+    }
+    60%, 100% { 
+        opacity: 1; 
+    }
+}
+
+
+@keyframes fade2 {
+    0%, 40% { 
+        opacity: 1;
+    }
+    60%, 100% { 
+        opacity: 0; 
+    }
+}
+
+
+@keyframes leg_l {
+    0% {
+        transform: rotate(-60deg);
+    }
+
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes leg_r {
+    0% {
+        transform: rotate(60deg);
+    }
+
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes hvost {
+    0% {
+        transform: rotate(1deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(1deg);
+    }
+}
+
+@keyframes eye_left {
+    0% {
+        transform: translate(-3px, -3px);
+    }
+
+    50% {
+        transform: translate(5px, 3px);
+    }
+
+    100% {
+        transform: translate(-3px, -3px);
+    }
+}
+
+@keyframes eye_right {
+    0% {
+        transform: translate(-5px, -3px);
+    }
+
+    50% {
+        transform: translate(5px, 3px);
+    }
+
+    100% {
+        transform: translate(-5px, -3px);
+    }
+}
+
+@keyframes show_speak {
+    0% {
+        transform: translate(-17px, 32px) scale(.5);
+        opacity: 0;
+    }
+
+    70% {
+        transform: translate(0, 0) scale(1.2);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+}
+
+
+@keyframes eye_close {
+    0% {
+        height: 0px;
+    }
+    90% {
+        height: 0px;
+    }
+    100% {
+        height: 22px;
+    }
+}
+
+
+@keyframes pacman-rotate-half-up {
+    0%,
+    100% {
+        transform: rotate(270deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pacman-rotate-half-down {
+    0%,
+    100% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes pacman-food {
+    0% {
+        left: 300%;
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    5% {
+        opacity: .5;
+    }
+    66% {
+        opacity: 1;
+    }
+    67% {
+        opacity: 0;
+    }
+    100% {
+        left: -20px;
+        transform: translateY(-50%);
+    }
+}

@@ -1,0 +1,1 @@
+&copy; <?=date('Y')?>. ООО “Йонас СПБ”. <br class="d-none d-lg-block d-xl-none"> Все права защищены

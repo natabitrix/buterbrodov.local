@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Локалхост</title>
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body class="home-page">
+
+	<div class="wrapper">
+
+		@@include('_common/header_only.html')
+
+        <div class="parallax">
+
+            <div class="header__top-logo-home-page">
+                <a class="header__top-logo-link" href="index.html">
+                    <img src="@img/logo_sun.svg" alt="">
+                </a>
+            </div>
+
+            <section class="main_slider__wrapper parallax__group" style="z-index:2">
+                <div class="main_slider swiper">
+                    <div class="decor d-none d-lg-block">
+                        <div class="main_slider__decor-left"  data-hs="fade right" style="--hs-delay: 0ms; --hs-translate-ratio: 10; ">
+                            <img src="@img/home-page/decor-slider.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="swiper-wrapper">
+            
+                            @@include('include/main_slider-item.html', {
+                            "img": "1",
+                            "h1": '1 Натуральные продукты с зеленых лугов в ваш дом',
+                            "text": 'Масленица вкуснее с Бутербродов!',
+                            "speak": 'На пикник!',
+                            })
+            
+                            @@include('include/main_slider-item.html', {
+                            "img": "2",
+                            "h1": '2 Натуральные продукты с зеленых лугов в ваш дом',
+                            "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                            "speak": 'Творожный творог!',
+                            })
+            
+                            @@include('include/main_slider-item.html', {
+                            "img": "3",
+                            "h1": '3 Натуральные продукты с зеленых лугов в ваш дом',
+                            "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                            "speak": 'В лес!',
+                            })
+            
+                            @@include('include/main_slider-item.html', {
+                            "img": "4",
+                            "h1": '4 Натуральные продукты с зеленых лугов в ваш дом',
+                            "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                            "speak": 'На море!',
+                            })
+                    </div>
+            
+                    <div class="swiper-navigation">
+                        <div class="swiper-button-prev btn btn-simple"><img src="@img/icons/arrow-left.svg" alt="prev"></div>
+                        <div class="swiper-button-next btn btn-simple"><img src="@img/icons/arrow-right.svg" alt="next"></div>
+                    </div>
+            
+                    <div class="animations__decor d-none d-lg-block">
+                        <div class="animations__decor-cow">
+                            <div class="animations__cow2 animations__cow_stand">
+                                @@include('animations/cow2.svg.html')
+                            </div>
+                        </div>
+                    </div>
+            
+                </div>
+            </section>
+
+            <section class="home-section home-section__categories parallax__group">
+                
+                <div class="decor decor-bg parallax__layer parallax__layer--deep">
+                    <div class="decor-left home-section__categories-bg-decor-left1"  data-hs="fade" style="--hs-delay: 0ms;">
+                        <img src="@img/decor-bg/syr1.svg" alt="">
+                    </div>
+                    <div class="decor-left home-section__categories-bg-decor-left2"  data-hs="fade" style="--hs-delay: 200ms;">
+                        <img src="@img/decor-bg/snakes.svg" alt="">
+                    </div>
+                    <div class="decor-left home-section__categories-bg-decor-left3"  data-hs="fade" style="--hs-delay: 400ms;">
+                        <img src="@img/decor-bg/syr5.svg" alt="">
+                    </div>
+                    <div class="decor-left home-section__categories-bg-decor-left4"  data-hs="fade" style="--hs-delay: 600ms;">
+                        <img src="@img/decor-bg/maslo.svg" alt="">
+                    </div>
+                    <div class="decor-left home-section__categories-bg-decor-left5"  data-hs="fade" style="--hs-delay: 800ms;">
+                        <img src="@img/decor-bg/syr2.svg" alt="">
+                    </div>
+                    
+                    <div class="decor-right home-section__categories-bg-decor-right1"  data-hs="fade" style="--hs-delay: 200ms;">
+                        <img src="@img/decor-bg/smetana.svg" alt="">
+                    </div>
+                    <div class="decor-right home-section__categories-bg-decor-right2"  data-hs="fade" style="--hs-delay: 400ms;">
+                        <img src="@img/decor-bg/kasha.svg" alt="">
+                    </div>
+                    <div class="decor-right home-section__categories-bg-decor-right3"  data-hs="fade" style="--hs-delay: 600ms;">
+                        <img src="@img/decor-bg/tvorog.svg" alt="">
+                    </div>
+                    
+                    <div class="decor-right home-section__categories-bg-decor-right4"  data-hs="fade" style="--hs-delay: 800ms;">
+                        <img src="@img/decor-bg/syr3.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="decor parallax__layer parallax__layer--back">
+                    <div class="decor-left home-section__categories-decor-left1"  data-hs="fade right" style="--hs-delay: 0ms;">
+                        <img src="@img/home-page/decor-left1.png" alt="">
+                    </div>
+                    <div class="decor-left home-section__categories-decor-left2"  data-hs="fade right" style="--hs-delay: 200ms;">
+                        <img src="@img/home-page/decor-left2.png" alt="">
+                    </div>
+                    <div class="decor-left home-section__categories-decor-left3"  data-hs="fade right" style="--hs-delay: 400ms;">
+                        <img src="@img/home-page/decor-left3.png" alt="">
+                    </div>
+
+                    <div class="decor-right home-section__categories-decor-right1"  data-hs="fade left" style="--hs-delay: 0ms;">
+                        <img src="@img/home-page/decor-right1.png" alt="">
+                    </div>
+                    <div class="decor-right home-section__categories-decor-right2"  data-hs="fade left" style="--hs-delay: 200ms;">
+                        <img src="@img/home-page/decor-right2.png" alt="">
+                    </div>
+                    <div class="decor-right home-section__categories-decor-right3"  data-hs="fade left" style="--hs-delay: 400ms;">
+                        <img src="@img/home-page/decor-right3.png" alt="">
+                    </div>
+                </div>
+
+                <div class="decor parallax__layer parallax__layer--fore">
+                    <div class="decor-left home-section__categories-leaf-decor-left1"  data-hs="fade right" style="--hs-delay: 0ms;">
+                        <img src="@img/decor/leaf1.png" alt="">
+                    </div>
+                    <div class="decor-left home-section__categories-leaf-decor-left2"  data-hs="fade right" style="--hs-delay: 600ms;">
+                        <img src="@img/decor/leaf3.png" alt="">
+                    </div>
+                    <div class="decor-left home-section__categories-leaf-decor-left3"  data-hs="fade right" style="--hs-delay: 1200ms;">
+                        <img src="@img/decor/leaf5.png" alt="">
+                    </div>
+
+                    <div class="decor-right home-section__categories-leaf-decor-right1"  data-hs="fade left" style="--hs-delay: 300ms;">
+                        <img src="@img/decor/leaf2.png" alt="">
+                    </div>
+                    <div class="decor-right home-section__categories-leaf-decor-right2"  data-hs="fade left" style="--hs-delay: 900ms;">
+                        <img src="@img/decor/leaf4.png" alt="">
+                    </div>     
+                </div>
+
+
+                <div class="home-section__categories-items-wrapper parallax__layer parallax__layer--base">
+                    <div class="container position-relative">
+                        <div class="h2">Торговые марки</div>
+                        <div class="row home-section__categories-items">
+                            <div class="col-8 offset-2 home-section__categories-item anim-repeat" data-hs="fade down zoom-in" style="--hs-translate-ratio: 5;"><a href="catalog-section.html"><img src="@img/category/1.svg" alt=""></a>
+                            </div>
+                            <div class="col-6 home-section__categories-item anim-repeat" data-hs="fade right zoom-in" style="--hs-translate-ratio: 5;"><a href="catalog-section.html"><img src="@img/category/2.svg" alt=""></a>
+                            </div>
+                            <div class="col-6 home-section__categories-item anim-repeat" data-hs="fade left zoom-in" style="--hs-translate-ratio: 5;"><a href="catalog-section.html"><img src="@img/category/3.svg" alt=""></a>
+                            </div>
+                            <div class="col-8 offset-2 home-section__categories-item anim-repeat" data-hs="fade up zoom-in" style="--hs-translate-ratio: 5;"><a href="catalog-section.html"><img src="@img/category/4.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <section class="home-section home-section__news">
+                <div class="h2">Новости</div>
+            
+                <div class="news_slider__swiper-navigation swiper-navigation">
+                    <div class="swiper-button-prev btn btn-simple"><img src="@img/icons/arrow-left.svg" alt="prev"></div>
+                    <div class="swiper-button-next btn btn-simple"><img src="@img/icons/arrow-right.svg" alt="next"></div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-md-4 col-xl-3 order-1 order-md-0 col-decor">
+                        <div class="animations__cow3 animations__cow_stand3">@@include('animations/cow3.svg.html')</div>
+                    </div>
+                    <div class="col-md-8 col-xl-9 order-0 order-md-1 col-slider">
+                        <div class="news_slider news-list swiper">
+                
+                            <div class="swiper-wrapper">
+            
+                                @@include('include/news_slider-item.html', {
+                                "img": "1.jpg",
+                                "date": '26 февраля, 2023',
+                                "h1": 'Масленица вкуснее с Бутербродов!',
+                                "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                                })
+            
+                                @@include('include/news_slider-item.html', {
+                                "img": "2.jpg",
+                                "date": '26 февраля, 2023',
+                                "h1": '2 Натуральные продукты с зеленых',
+                                "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                                })
+                
+                                @@include('include/news_slider-item.html', {
+                                "img": "1.jpg",
+                                "date": '26 февраля, 2023',
+                                "h1": '3 Натуральные продукты с зеленых ',
+                                "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                                })
+                
+                
+                                @@include('include/news_slider-item.html', {
+                                "img": "2.jpg",
+                                "date": '26 февраля, 2023',
+                                "h1": '4 Натуральные продукты с зеленых',
+                                "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                                })
+                
+                                @@include('include/news_slider-item.html', {
+                                "img": "1.jpg",
+                                "date": '26 февраля, 2023',
+                                "h1": '5 Натуральные продукты с зеленых',
+                                "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                                })
+                
+                                @@include('include/news_slider-item.html', {
+                                "img": "2.jpg",
+                                "date": '26 февраля, 2023',
+                                "h1": '6 Масленица вкуснее с Бутербродов!',
+                                "text": 'Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                                })
+            
+                                @@include('include/news_slider-item.html', {
+                                "img": "2.jpg",
+                                "date": '26 февраля, 2023',
+                                "h1": '7 Масленица вкуснее с Бутербродов!',
+                                "text": 'Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                                })
+            
+                                @@include('include/news_slider-item.html', {
+                                "img": "2.jpg",
+                                "date": '26 февраля, 2023',
+                                "h1": '8 Масленица вкуснее с Бутербродов!',
+                                "text": 'Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                                })
+                            </div>
+                
+                        </div>
+            
+                    </div>
+                </div>
+            
+                <div class="show_all">
+                    <a href="news.html" class="btn">Смотреть все</a>
+                </div>
+            
+            </section>
+
+
+            <section class="home-section home-section__recepie">
+
+                <div class="h2">Рецепты</div>
+                
+                <div class="anim-repeat" data-hs="fade" style="--hs-translate-ratio: 2;--hs-delay: 200ms;">
+                    <div class="recepie_slider__swiper-navigation swiper-navigation">
+                        <div class="swiper-button-prev btn btn-simple"><img src="@img/icons/arrow-left.svg" alt="prev"></div>
+                        <div class="swiper-button-next btn btn-simple"><img src="@img/icons/arrow-right.svg" alt="next"></div>
+                    </div>
+                
+                
+                    <div class="recepie_slider recepie-list swiper">
+                        <div class="swiper-wrapper">
+                
+                            @@include('include/recepie_slider-item.html', {
+                            "img": "2.jpg",
+                            "h1": '8 Натуральные продукты с зеленых лугов в ваш дом',
+                            "time": '45 мин',
+                            })
+                
+                            @@include('include/recepie_slider-item.html', {
+                            "img": "1.jpg",
+                            "h1": 'Тонкие блинчики с Бутербродов',
+                            "time": '45 мин',
+                            })
+                
+                            @@include('include/recepie_slider-item.html', {
+                            "img": "2.jpg",
+                            "h1": '2 Натуральные продукты с зеленых лугов в ваш дом',
+                            "time": '45 мин',
+                            })
+                
+                            @@include('include/recepie_slider-item.html', {
+                            "img": "1.jpg",
+                            "h1": '3 Натуральные продукты с зеленых лугов в ваш дом',
+                            "time": '45 мин',
+                            })
+                
+                            @@include('include/recepie_slider-item.html', {
+                            "img": "2.jpg",
+                            "h1": '4 Натуральные продукты с зеленых лугов в ваш дом',
+                            "time": '45 мин',
+                            })
+                
+                            @@include('include/recepie_slider-item.html', {
+                            "img": "1.jpg",
+                            "h1": '5 Натуральные продукты с зеленых лугов в ваш дом',
+                            "time": '45 мин',
+                            })
+                
+                            @@include('include/recepie_slider-item.html', {
+                            "img": "2.jpg",
+                            "h1": '6 Натуральные продукты с зеленых лугов в ваш дом',
+                            "time": '45 мин',
+                            })
+                
+                            @@include('include/recepie_slider-item.html', {
+                            "img": "1.jpg",
+                            "h1": '7 Натуральные продукты с зеленых лугов в ваш дом',
+                            "time": '45 мин',
+                            })
+                        </div>
+                    </div>
+                
+                    <div class="animations__decor d-none d-lg-block">
+                        <div class="animations__decor-cow animations__decor-left animate-in-view">
+                            <div class="animations__cow1-2 animations__cow_stand-">@@include('animations/cow1.svg.html')</div>
+                        </div>
+                    </div>
+
+                    <div class="animations__decor">
+                        <div class="animations__decor-cow animations__decor-right">
+                            <div class="animations__cow2 animations__cow_stand">@@include('animations/cow2.svg.html')</div>
+                        </div>
+                    </div>
+                
+                    <div class="show_all">
+                        <a href="recepie.html" class="btn">Смотреть все</a>
+                    </div>
+                </div>
+
+            </section>
+            
+
+            @@include('_common/footer_only.html')
+
+        </div>
+
+
+
+        
+
+
+    </div>
+    
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/humbleScroll.min.js"></script>
+    <script src="js/jquery.sticky-sidebar.min.js"></script>
+    <script src="js/app.min.js"></script>
+    
+    
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

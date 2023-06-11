@@ -1,0 +1,26 @@
+$font-path: '../fonts';
+$font-name: 'Circe';
+$fonts: ("700": "ExtraBold", "500": "Bold", "normal": "Regular", "300": "Light");
+
+@each $weight, $weight-name in $fonts {
+	@font-face {
+		font-family: $font-name;
+		src: url('#{$font-path}/#{$font-name}-#{$weight-name}.eot?#iefix') format('embedded-opentype'),
+			url('#{$font-path}/#{$font-name}-#{$weight-name}.woff') format('woff'),
+			url('#{$font-path}/#{$font-name}-#{$weight-name}.ttf') format('truetype');
+		font-weight: $weight;
+		font-style: normal;
+		font-display: fallback; //swap
+	}
+
+}
+
+
+@font-face {
+	font-family: 'WORKSHOPMarker';
+	src: url('#{$font-path}/WORKSHOPMarker.otf') format('opentype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: fallback; //swap
+}
+

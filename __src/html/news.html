@@ -1,0 +1,97 @@
+@@include('_common/header.html', {
+    "class": " news-list-page",
+    })
+    
+    
+    <main class="main">
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-xxxl-3 order-1 order-lg-0 col-decor">
+                <div class="col-sticky sticky-wrapper">
+
+                    <div class="animations__decor sticky">
+                        <div class="animations__decor-speak animations__speak animate-in-view">
+                            Что новенького?
+                        </div>
+                    
+                        <div class="animations__decor-cow animations__cow3 animations__cow_stand">@@include('animations/cow3.svg.html')</div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-8 col-xxxl-9 order-0 order-lg-1 col-news">
+                <div class="news-list container">
+                    <h1>Новости</h1>
+                    <div class="row">
+
+                        @@include('include/news-item.html', {
+                        "img": "1.jpg",
+                        "date": '26 февраля, 2023',
+                        "h1": 'Масленица вкуснее с Бутербродов!',
+                        "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                        })
+
+                        @@include('include/news-item.html', {
+                        "img": "2.jpg",
+                        "date": '26 февраля, 2023',
+                        "h1": '2 Натуральные продукты с зеленых',
+                        "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                        })
+        
+                        @@include('include/news-item.html', {
+                        "img": "1.jpg",
+                        "date": '26 февраля, 2023',
+                        "h1": '3 Натуральные продукты с зеленых ',
+                        "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                        })
+        
+        
+                        @@include('include/news-item.html', {
+                        "img": "2.jpg",
+                        "date": '26 февраля, 2023',
+                        "h1": '4 Натуральные продукты с зеленых',
+                        "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                        })
+        
+                        @@include('include/news-item.html', {
+                        "img": "1.jpg",
+                        "date": '26 февраля, 2023',
+                        "h1": '5 Натуральные продукты с зеленых',
+                        "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                        })
+        
+                        @@include('include/news-item.html', {
+                        "img": "2.jpg",
+                        "date": '26 февраля, 2023',
+                        "h1": '6 Масленица вкуснее с Бутербродов!',
+                        "text": 'Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                        })
+
+                        @@include('include/news-item.html', {
+                        "img": "2.jpg",
+                        "date": '26 февраля, 2023',
+                        "h1": '7 Масленица вкуснее с Бутербродов!',
+                        "text": 'Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                        })
+
+                        @@include('include/news-item.html', {
+                        "img": "2.jpg",
+                        "date": '26 февраля, 2023',
+                        "h1": '8 Масленица вкуснее с Бутербродов!',
+                        "text": 'Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                        })
+                    </div>
+        
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</main>
+    
+    
+    @@include('_common/footer.html')

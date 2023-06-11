@@ -1,0 +1,210 @@
+//@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@use "sass:map";
+
+//Colors
+
+$bg: #F6F0EA;
+$bg: #9c0000;
+$white: #fff;
+$black: #000;
+$dark: #25221F;
+$blue: #E1EFED;
+$dark_blue: #39BAC9;
+$yellow: #FFDE75;
+$dark_yellow: #F1CF91;
+$beige: #EAE1D8;
+$green: #ACCA9B;
+$dark_green: #209d20;
+$violet: #E9ADDD;
+$red: #ab002d;
+
+$colors : (
+  "bg": $bg,
+  "white": $white,
+  "black": $black,
+  "dark": $dark,
+  "blue": $blue,
+  "dark_blue": $dark_blue,
+  "yellow": $yellow,
+  "dark_yellow": $dark_yellow,
+  "beige": $beige,
+  "green": $green,
+  "dark_green": $dark_green,
+  "violet": $violet,
+  "red": $red,
+);
+
+@each $color_name, $color_value in $colors {
+  .bg-#{$color_name} {
+    background-color: $color_value;
+  }
+  .color-#{$color_name} {
+    color: $color_value;
+  }
+  .hover-bg-#{$color_name}:hover {
+    background-color: $color_value;
+  }
+  .active-bg-#{$color_name}.active {
+    background-color: $color_value;
+  }
+  .hover-color-#{$color_name}:hover {
+    color: $color_value;
+  }
+  .active-color-#{$color_name}.active {
+    color: $color_value;
+  }
+}
+
+
+
+//Fonts
+$Circe : "Circe";
+$WORKSHOPMarker : "WORKSHOPMarker";
+
+
+$spacer: 1rem;
+$spacers: (
+        0: 0,
+        1: calc($spacer / 4),
+        2: calc($spacer / 2),
+        3: calc($spacer),
+        4: calc($spacer * 1.5),
+        5: calc($spacer * 2),
+        6: calc($spacer * 2.5),
+        7: calc($spacer * 3)
+);
+
+$negative-spacers: null;
+
+$grid-columns:      12;
+
+$grid-gutter-width: 24px;		
+
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xxs: 0,
+  xs: 360px,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1280px,
+  xxl: 1400px,
+  xxxl: 1800px,
+  4xl: 2000px,
+);
+
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1270px,
+  xxl: 1340px,
+  xxxl: 1800px,
+);
+
+$min-contrast-ratio: 2.5;
+
+@import "../../node_modules/bootstrap/scss/functions";
+
+$btn-close-padding-x:0;
+$btn-close-bg:none;
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+
+
+@import 'bootstrap-grid-custom';
+@import "../../node_modules/bootstrap/scss/containers";
+@import 'bootstrap-utilities-custom';
+
+
+// $modal-header-border-color: transparent;
+// $modal-content-border-color: transparent;
+// $modal-header-padding: 0;
+// $modal-inner-padding: 0;
+// $modal-content-bg: transparent;
+// $modal-content-border-radius:0;
+// $modal-backdrop-bg: black;
+// $modal-backdrop-opacity:.7;
+
+// $modal-sm: 300px;
+// $modal-md: 500px;
+// $modal-lg: 800px;
+// $modal-xl: 1140px;
+
+// @import "../../node_modules/bootstrap/scss/modal";
+// @import "../../node_modules/bootstrap/scss/close";
+
+
+// .form-control.is-invalid+label, .was-validated .form-control:invalid+label{
+// 	color:$red;
+// }
+
+// .was-validated .form-check-input:invalid, .form-check-input.is-invalid {
+//     border-color: $red;
+//     box-shadow: 0 0 0 0.25rem rgb(231 57 34 / 25%);
+// }
+
+
+// $form-check-input-focus-box-shadow: none!important;
+// $form-check-input-bg: transparent;
+// $form-check-input-checked-bg-color: $black;
+// $form-check-input-checked-border-color: $black;
+// $form-check-input-focus-border: $black;
+// $form-check-input-border: 1px solid $black;
+
+// @import "../../node_modules/bootstrap/scss/forms/form-check";
+
+// $enable-validation-icons: false;
+// $form-feedback-valid-color: $black;
+// $form-feedback-invalid-color: $red;
+// @import "../../node_modules/bootstrap/scss/forms/validation";
+
+// $input-border-radius:1px;
+// @import "../../node_modules/bootstrap/scss/forms/input-group";
+
+//@import "../../node_modules/bootstrap/scss/forms/form-control";
+
+
+//@import "../../node_modules/bootstrap/scss/accordion";
+//@import "../../node_modules/bootstrap/scss/transitions";
+@import "../../node_modules/bootstrap/scss/nav";
+
+//$sl-overlay-background: black;
+//@import 'simple-lightbox';
+//@import 'fancybox';
+
+//@import 'slick';
+//@import 'slick-theme';
+
+
+@import 'mixins/functions';//миксин для осветления и затемнения кнопок
+
+
+
+@import 'swiper';
+@import 'swiper-navigation';
+
+@import 'simple-scrollbar';
+
+// @import 'aos/aos';
+
+
+
+@import "fonts";
+
+@import 'clean';
+@import 'typography';
+@import 'utilites';
+@import 'helpers';
+@import 'animations';
+// @import 'colors';
+@import 'global';
+@import 'humbleScroll';
+@import 'parallax';
