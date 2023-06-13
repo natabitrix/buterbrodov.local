@@ -19,7 +19,7 @@ $arSectionDeleteParams = array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_C
 ?>
 
 <?if(0 < $arResult["SECTIONS_COUNT"]):?>
-<div class="row home-section__categories-items">
+<div class="row_ home-section__categories-items">
 <?
 $i = 1;
 foreach ($arResult['SECTIONS'] as &$arSection):
@@ -56,11 +56,13 @@ foreach ($arResult['SECTIONS'] as &$arSection):
 		$animation_type = "fade up zoom-out";
 		$animation_delay = "--hs-delay: 100ms;";
 	}
-	$animation_delay = "--hs-delay: 200ms;";
+	// $animation_delay = "--hs-delay: 200ms;";
+	$animation_translate_ratio = "--hs-translate-ratio: 3;";
+	$animation_type = "fade up zoom-in";
 	$animation_blur = "";
 
 ?>
-	<div class="home-section__categories-item <?=$class?> anim-repeat" data-hs="<?=$animation_type?>" style="<?=$animation_delay?><?=$animation_translate_ratio?><?=$animation_blur?>">
+	<div class="home-section__categories-item <?//=$class?> anim-repeat" data-hs="<?=$animation_type?>" style="<?=$animation_delay?><?=$animation_translate_ratio?><?=$animation_blur?>">
 		<a href="<?=$arSection["SECTION_PAGE_URL"]?>">
 		<?if($arSection["UF_LOGO"]):?> 
 		<img src="<?=CFile::GetPath($arSection["UF_LOGO"])?>" alt="<?=$arSection["NAME"];?>" title="<?=$arSection["NAME"];?>">

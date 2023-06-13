@@ -1,9 +1,11 @@
 
-
 <?/***главный слайдер************/?>
 <section class="main_slider__wrapper parallax__group" style="z-index:2">
+
 	<?$APPLICATION->IncludeComponent("bitrix:news.list", "main_slider", Array(
 		"COMPONENT_TEMPLATE" => "",
+			"PARENT_SECTION_CODE" => "glavnaya",	// Код раздела
+			"PARENT_SECTION" => "",	// ID раздела
 			"IBLOCK_TYPE" => "",	// Тип информационного блока (используется только для проверки)
 			"IBLOCK_ID" => "18",	// Код информационного блока
 			"NEWS_COUNT" => "999",	// Количество новостей на странице
@@ -43,7 +45,6 @@
 			"INCLUDE_IBLOCK_INTO_CHAIN" => "N",	// Включать инфоблок в цепочку навигации
 			"ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
 			"HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
-			"PARENT_SECTION" => "",	// ID раздела
 			"PARENT_SECTION_CODE" => "",	// Код раздела
 			"INCLUDE_SUBSECTIONS" => "N",	// Показывать элементы подразделов раздела
 			"STRICT_SECTION_CHECK" => "N",	// Строгая проверка раздела для показа списка
@@ -135,7 +136,7 @@
 	);?>
 
 
-	<?/***сприсок разделов************/?>
+	<?/***список разделов************/?>
 	<div class="home-section__categories-items-wrapper parallax__layer parallax__layer--base">
 		<div class="container position-relative">
 

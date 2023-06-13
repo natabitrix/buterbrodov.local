@@ -2,12 +2,13 @@ import * as nodePath from 'path';
 const rootFolder = nodePath.basename(nodePath.resolve());
 
 const buildFolder = `./www/local/templates/buterbrodov/assets`;
+const phpFolder = `./www/local`;
 const srcFolder = `./__src`;
+const _localDomain = `buterbrodov.local`;
 
 export const path = {
     build: {
         html: `${buildFolder}/`,
-        // php: `./**/*.php`,
         js: `${buildFolder}/js/`,
         css: `${buildFolder}/css/`,
         images: `${buildFolder}/img/`,
@@ -15,6 +16,7 @@ export const path = {
         fonts: `${buildFolder}/fonts/`
     },
     src: {
+        php: `${phpFolder}/**/*.php`,
         html: `${srcFolder}/html/*.html`,
         js: `${srcFolder}/js/app.js`,
         jsExt: `${srcFolder}/js/ext/*.js`,
@@ -25,6 +27,7 @@ export const path = {
         fonts: `${srcFolder}/fonts/**/*.*`
     },
     watch: {
+        php: `${phpFolder}/**/*.php`,
         html: `${srcFolder}/html/**/*.html`,
         js: `${srcFolder}/js/**/*.js`,
         scss: `${srcFolder}/**/*.scss`,
@@ -36,6 +39,7 @@ export const path = {
     buildFolder: buildFolder,
     srcFolder: srcFolder,
     rootFolder: rootFolder,
+    _localDomain: _localDomain,
     ftp: ``,
   
   }

@@ -20,7 +20,7 @@ $this->setFrameMode(true);
 
 <main class="main">
 
-	<?$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "section", Array(
+	<?$APPLICATION->IncludeComponent("bitrix:catalog.section.list", "catalog_section", Array(
 			"VIEW_MODE" => "TEXT",	// Вид списка подразделов
 			"SHOW_PARENT_NAME" => "Y",	// Показывать название раздела
 			"IBLOCK_TYPE" => "",	// Тип инфоблока
@@ -101,7 +101,7 @@ $this->setFrameMode(true);
 
 					<?$APPLICATION->IncludeComponent(
 						"bitrix:news.list",
-						"products_list",
+						"catalog_products_list",
 						Array(
 							"PARENT_SECTION" => $arResult["VARIABLES"]["SECTION_ID"],
 

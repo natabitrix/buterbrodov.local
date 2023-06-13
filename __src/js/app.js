@@ -301,7 +301,7 @@ $(document).on("ready", function () {
     }
 
     function showBreakpoint() {
-        $('body').append('<div id="show_breakpoint" style="position:fixed;top:2px;left:5px;z-index:1000;">sdf</div>');
+        // $('body').append('<div id="show_breakpoint" style="position:fixed;top:2px;left:5px;z-index:1000;"></div>');
         $('#show_breakpoint').text('up(' + getBreakpoint($(document).innerWidth()) + ')');
         $(window).on("resize", function () {
             $('#show_breakpoint').text('up(' + getBreakpoint($(document).innerWidth()) + ')');
@@ -398,6 +398,7 @@ $(document).on("ready", function () {
 
     $(".parallax").on("scroll", function () {
         $('.main_slider .animations__decor').css({ 'bottom': $(this).scrollTop() * 0.3 })
+        $('.header__top-logo-home-page').css({ 'top': $(this).scrollTop() * -1 })
     });
 
     $(window).on("scroll", function () {

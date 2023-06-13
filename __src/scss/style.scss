@@ -3,9 +3,7 @@
 @use "sass:map";
 
 //Colors
-
 $bg: #F6F0EA;
-$bg: #9c0000;
 $white: #fff;
 $black: #000;
 $dark: #25221F;
@@ -96,7 +94,7 @@ $grid-breakpoints: (
   xl: 1280px,
   xxl: 1400px,
   xxxl: 1800px,
-  4xl: 2000px,
+  xxxxl: 2000px,
 );
 
 
@@ -126,19 +124,19 @@ $btn-close-bg:none;
 
 // $modal-header-border-color: transparent;
 // $modal-content-border-color: transparent;
-// $modal-header-padding: 0;
-// $modal-inner-padding: 0;
-// $modal-content-bg: transparent;
-// $modal-content-border-radius:0;
+$modal-header-padding: 0;
+$modal-inner-padding: 0;
+$modal-content-bg: $yellow;
+$modal-content-border-radius:30px;
 // $modal-backdrop-bg: black;
-// $modal-backdrop-opacity:.7;
+$modal-backdrop-opacity:.1;
 
 // $modal-sm: 300px;
 // $modal-md: 500px;
-// $modal-lg: 800px;
+$modal-lg: 700px;
 // $modal-xl: 1140px;
 
-// @import "../../node_modules/bootstrap/scss/modal";
+@import "../../node_modules/bootstrap/scss/modal";
 // @import "../../node_modules/bootstrap/scss/close";
 
 
@@ -169,7 +167,19 @@ $btn-close-bg:none;
 // $input-border-radius:1px;
 // @import "../../node_modules/bootstrap/scss/forms/input-group";
 
-//@import "../../node_modules/bootstrap/scss/forms/form-control";
+$input-font-size: 20px;
+$input-border-radius: 16px;
+$input-border-width: 0;
+$input-padding-x: 20px;
+$form-floating-padding-x: 20px;
+$form-floating-height: 64px;
+$form-floating-label-opacity: .4;
+$form-floating-input-padding-t:   1.7rem;
+$form-floating-input-padding-b:   .5rem;
+$form-floating-label-transform:   scale(.85) translateY(-.6rem) translateX(.15rem);
+
+@import "../../node_modules/bootstrap/scss/forms/form-control";
+@import "../../node_modules/bootstrap/scss/forms/floating-labels";
 
 
 //@import "../../node_modules/bootstrap/scss/accordion";
@@ -205,6 +215,6 @@ $btn-close-bg:none;
 @import 'helpers';
 @import 'animations';
 // @import 'colors';
-@import 'global';
+@import '_global';
 @import 'humbleScroll';
 @import 'parallax';

@@ -1,24 +1,36 @@
 $font-path: '../fonts';
 $font-name: 'Circe';
-$fonts: ("700": "ExtraBold", "500": "Bold", "normal": "Regular", "300": "Light");
+$fonts: ( "700": "Bold", "400": "Regular" );
+// $fonts: ("700": "ExtraBold", "500": "Bold", "normal": "Regular", "300": "Light");
+// @each $weight, $weight-name in $fonts {
+// 	@font-face {
+// 		font-family: $font-name;
+// 		src: url('#{$font-path}/#{$font-name}-#{$weight-name}.eot?#iefix') format('embedded-opentype'),
+// 			url('#{$font-path}/#{$font-name}-#{$weight-name}.woff') format('woff'),
+// 			url('#{$font-path}/#{$font-name}-#{$weight-name}.ttf') format('truetype');
+// 		font-weight: $weight;
+// 		font-style: normal;
+// 		font-display: fallback; //swap
+// 	}
+// }
 
 @each $weight, $weight-name in $fonts {
 	@font-face {
 		font-family: $font-name;
 		src: url('#{$font-path}/#{$font-name}-#{$weight-name}.eot?#iefix') format('embedded-opentype'),
-			url('#{$font-path}/#{$font-name}-#{$weight-name}.woff') format('woff'),
-			url('#{$font-path}/#{$font-name}-#{$weight-name}.ttf') format('truetype');
+			 url('#{$font-path}/#{$font-name}-#{$weight-name}.woff') format('woff'),
+			 url('#{$font-path}/#{$font-name}-#{$weight-name}.ttf') format('truetype');
 		font-weight: $weight;
 		font-style: normal;
 		font-display: fallback; //swap
 	}
-
 }
 
 
 @font-face {
 	font-family: 'WORKSHOPMarker';
-	src: url('#{$font-path}/WORKSHOPMarker.otf') format('opentype');
+	src: url('#{$font-path}/WORKSHOPMarker.woff2') format('woff2'),
+		 url('#{$font-path}/WORKSHOPMarker.woff') format('woff');
 	font-weight: 400;
 	font-style: normal;
 	font-display: fallback; //swap

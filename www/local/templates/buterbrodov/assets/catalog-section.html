@@ -15,7 +15,6 @@
 	<div class="wrapper  catalog-page catalog-section-page theme-blue">
 
 		
-		
 <!-- <div class="loader">
     <div class="loader-pacman">
         <div></div>
@@ -28,6 +27,12 @@
     </div>
 </div> -->
 
+<div id="show_breakpoint" style="position:fixed;top:2px;left:5px;z-index:1000;"></div>
+		
+		
+
+
+
 <div class="header__top">
 
     <div class="header__top-logo">
@@ -35,24 +40,26 @@
             <img src="img/logo.svg" alt="">
         </a>
     </div>
-
-    <div class="header__top-back-button">
-        <a href="index.html" class="btn back-button-catalog">
-            <img src="img/icons/arrow-left.svg" alt="" class="icon">
-            <span class="d-none d-lg-block">Все бренды</span>
-        </a>
-        <a href="index.html" class="btn back-button-general">
-            <img src="img/icons/arrow-left.svg" alt="" class="icon">
-            <span class="d-none d-lg-block">Назад</span>
-        </a>
-    </div>
-    
 </div>
+
+
+<div class="header__back-button">
+    <a href="index.html" class="btn back-button-catalog">
+        <img src="img/icons/arrow-left.svg" alt="" class="icon">
+        <span class="d-none d-lg-block">Все бренды</span>
+    </a>
+    <a href="index.html" class="btn back-button-general">
+        <img src="img/icons/arrow-left.svg" alt="" class="icon">
+        <span class="d-none d-lg-block">Назад</span>
+    </a>
+</div>
+
 
 <div class="header__menu-btn menu_open">
     <img src="img/icons/menu.svg" alt="menu" class="d-none d-lg-block">
     <img src="img/icons/menu_mobile.svg" alt="menu" class="d-lg-none">
 </div>
+
 
 <div class="header__menu-btn menu_close">
     <img src="img/icons/menu_close.svg" alt="x">
@@ -951,10 +958,6 @@
 
 
 
-
-
-
-
 <footer class="footer">
     
     <button type="button" id="scrollTopBtn" class="btn_scroll_top btn btn-simple btn__white">
@@ -1050,6 +1053,36 @@
 
 
 
+
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="feedbackFormModal" tabindex="-1" aria-labelledby="feedbackFormModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <button type="button" class="modal-close btn btn-simple" data-bs-dismiss="modal" aria-label="x"><img src="img/icons/modal_close.svg" alt="x"></button>
+            <div class="modal-body">
+                <h5 class="modal-title" id="feedbackFormModalLabel">Поделись впечатлениями о продукте</h5>
+                <form action="" class="form">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control sm" id="input1" placeholder="имя">
+                        <label for="input1">имя</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea name="" id="input2" style="height: 180px" class="form-control"
+                            placeholder="Поделись впечатлениями о продукте"></textarea>
+                        <label for="input2" class="form-label">Поделись впечатлениями о продукте</label>
+                    </div>
+
+
+                    <input type="submit" value="Отправить" class="btn btn__black">
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 

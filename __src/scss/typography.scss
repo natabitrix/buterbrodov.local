@@ -132,7 +132,20 @@ a {
 			background-color: $dark_blue;
 		}
 	}
+	&.btn__black{
+		color: $white;
+		background-color: $black;
 
+		&:hover {
+			background-color: $dark_blue;
+			color: $white;
+		}
+
+		&.no-btn:hover {
+			background-color: $black;
+			color: $white;
+		}
+	}
 	&-circle-56 {
 		width: 46px;
 		height: 46px;
@@ -286,3 +299,5 @@ p {
 pre{
 	text-align: left!important;
 }
+
+

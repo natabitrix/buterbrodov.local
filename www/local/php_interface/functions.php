@@ -1,4 +1,10 @@
 <?php
+if (file_exists($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/autoload.php")) {
+    require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/autoload.php");
+}
+
+
+
 
 
 function printArr($array, $userID = 8098, $userGroup = 1)
@@ -9,11 +15,23 @@ function printArr($array, $userID = 8098, $userGroup = 1)
 	{
 		$adminCondition = $USER->GetID() == $userID;
 	}
-	if($USER && $USER->IsAdmin() && $adminCondition) echo '<pre>' . print_r($array,1) . '</pre>';
-
+	if($USER && $USER->IsAdmin() && $adminCondition) {
+		echo '<pre>' . print_r($array,1) . '</pre>';
+	}
 }
 
-
+function kintArr($array, $userID = 8098, $userGroup = 1)
+{
+	global $USER;
+	$adminCondition = in_array($userGroup,$USER->GetUserGroupArray());
+	if($userID != 8098)
+	{
+		$adminCondition = $USER->GetID() == $userID;
+	}
+	if($USER && $USER->IsAdmin() && $adminCondition) {
+		Kint::dump($array);
+	}
+}
 
 AddEventHandler("main", "OnEpilog", "Redirect404");
 function Redirect404() {

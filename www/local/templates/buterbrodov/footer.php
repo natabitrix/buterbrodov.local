@@ -1,4 +1,21 @@
-	<?if($ERROR_404!="Y"):?>
+<?if($APPLICATION->GetProperty("is_text_page") == "Y"):?>
+	<?
+	$content_open_divs = 
+	"\t".'<main class="main">'."\n".
+	"\t\t".'<div class="container">'."\n".
+	"\t\t\t".'<div class="text-content">'."\n";
+	$APPLICATION->AddViewContent('content_open_divs', $content_open_divs);
+	$APPLICATION->AddChainItem($APPLICATION->GetTitle(), $APPLICATION->GetCurPage(false));
+	$APPLICATION->AddViewContent("pageClasses", "text-page");
+	?>
+
+			</div><!--.text-content-->
+		</div><!--.container-->
+	</main>
+<?endif?>
+
+
+<?if($ERROR_404!="Y"):?>
 	<footer class="footer">
 		
 		<button type="button" id="scrollTopBtn" class="btn_scroll_top btn btn-simple btn__white">
@@ -132,21 +149,21 @@
 			
 		</div>
 	</footer>
-	<?endif?>
+<?endif?>
 
 
 
-	<?if($homePage):?>
+<?if($homePage):?>
 	</div><!--.parallax-->
-	<?endif?>
+<?endif?>
 
 
 	<form id="cookie_userconsent">
-	<?$APPLICATION->IncludeComponent("bitrix:main.userconsent.request", "", Array(
-		"AUTO_SAVE" => "Y",	// Сохранять автоматически факт согласия
+	<?$APPLICATION->IncludeComponent("bitrix:main.userconsent.request", "cookie", Array(
+			"AUTO_SAVE" => "Y",	// Сохранять автоматически факт согласия
 			"COMPOSITE_FRAME_MODE" => "A",	// Голосование шаблона компонента по умолчанию
 			"COMPOSITE_FRAME_TYPE" => "AUTO",	// Содержимое компонента
-			"ID" => "2",	// Соглашение
+			"ID" => "1",	// Соглашение
 			"IS_CHECKED" => "N",	// Галка согласия проставлена по умолчанию
 			"IS_LOADED" => "Y",	// Загружать текст соглашения сразу
 			"COMPONENT_TEMPLATE" => ".default"
@@ -159,6 +176,57 @@
 <!--.wrapper-->
 
 
+<?if(strpos($APPLICATION->GetCurPage(false), "catalog/") !== false && substr($APPLICATION->GetCurPage(false), -5) == ".html"):?>
+<div class="modal fade" id="feedbackFormModal" tabindex="-1" aria-labelledby="feedbackFormModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <button type="button" class="modal-close btn btn-simple" data-bs-dismiss="modal" aria-label="x"><img src="<?=SITE_TEMPLATE_PATH?>/assets/img/icons/modal_close.svg" alt="x"></button>
+            <div class="modal-body">
+				<div class="feedback_product__form form-placeholder">
+					<?$APPLICATION->IncludeComponent("bitrix:form.result.new", "feedback_product_modal", Array(
+							"WEB_FORM_ID" => "2",	// ID веб-формы
+							"COMPONENT_TEMPLATE" => "feedback_product_modal",
+							"IGNORE_CUSTOM_TEMPLATE" => "N",	// Игнорировать свой шаблон
+							"USE_EXTENDED_ERRORS" => "Y",	// Использовать расширенный вывод сообщений об ошибках
+							"SEF_MODE" => "N",	// Включить поддержку ЧПУ
+							"CACHE_TYPE" => "A",	// Тип кеширования
+							"CACHE_TIME" => "3600",	// Время кеширования (сек.)
+							"LIST_URL" => "",	// Страница со списком результатов
+							"EDIT_URL" => "",	// Страница редактирования результата
+							"SUCCESS_URL" => "",	// Страница с сообщением об успешной отправке
+							"CHAIN_ITEM_TEXT" => "",	// Название дополнительного пункта в навигационной цепочке
+							"CHAIN_ITEM_LINK" => "",	// Ссылка на дополнительном пункте в навигационной цепочке
+							"VARIABLE_ALIASES" => array(
+								"WEB_FORM_ID" => "WEB_FORM_ID",
+								"RESULT_ID" => "RESULT_ID"
+							)
+						),
+						false
+					);?>
+
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+<?endif?>
+
+
+<?/*$this->SetViewTarget('OPEN_GRAPH');?>
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="<?=$arResult["IPROPERTY_VALUES"]["ELEMENT_META_TITLE"]?>" />
+    <meta property="og:description" content="<?=$arResult["IPROPERTY_VALUES"]["ELEMENT_META_DESCRIPTION"]?>" />
+    <meta property="og:url" content="<?=$arResult["DETAIL_PAGE_URL"]?>" />
+    <meta property="og:image" content="<?=$arResult["PREVIEW_PICTURE"]["SRC"]?>" />
+    <meta property="og:image:width" content="<?=$arResult["PREVIEW_PICTURE"]["WIDTH"]?>" />
+    <meta property="og:image:height" content="<?=$arResult["PREVIEW_PICTURE"]["HEIGHT"]?>" />
+<?$this->EndViewTarget();*/?>
+
+
 </body>
 
 </html>
+
+<?
+//$APPLICATION->AddViewContent('breadcrumb', $breadCrumbs);
+?>

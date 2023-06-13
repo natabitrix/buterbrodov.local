@@ -1,13 +1,63 @@
 @@include('_common/header.html', {
-"class": " news-detail-page",
-})
-
-
-<main class="main">
+    "class": " news-detail-page",
+    })
     
-</main>
+    
+    <main class="main">
+        <div class="news-detail">
+
+            <div class="news-detail__img">
+                <div class="container">
+                    <img src="@img/news-detail/1.png" alt="">
+                </div>
+            </div>
+            <div class="news-detail__content">
+                <div class="container">
+                    <div class="news-detail__text">
+                        <div class="news-detail__content-date">
+                            26 февраля, 2023
+                        </div>
+
+                        <h1>Тонкие блинчики
+                            с маслом Бутербродов</h1>
 
 
+                            <p>Мы используем файлы «cookies» и похожие технологии на нашем веб-сайте, чтобы улучшить работу и повысить эффективность сайта.</p>
+                            <p>Используя этот сайт, Вы соглашаетесь с размещением cookie-файлов на Вашем компьютере в соответствии с условиями настоящего правила. Пожалуйста, посмотрите далее, КАК МОЖНО КОНТРОЛИРОВАТЬ ФАЙЛЫ COOKIES, а также для получения дополнительной информации о том, как отозвать свое согласие в любое время.
+                            </p>
+                    </div>
 
+                    <div class="news-list">
+                        <div class="h2">Другие новости</div>
+                        <div class="row">
+        
+                            @@include('include/news-item.html', {
+                            "img": "1.jpg",
+                            "date": '26 февраля, 2023',
+                            "h1": 'Масленица вкуснее с Бутербродов!',
+                            "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                            })
+        
+                            @@include('include/news-item.html', {
+                            "img": "2.jpg",
+                            "date": '26 февраля, 2023',
+                            "h1": '2 Натуральные продукты с зеленых',
+                            "text": 'Масленица вкуснее с Бутербродов! Участвуйте в акциях наших партнёров Магнит и Верный, выигрывайте подарки!',
+                            })
+            
 
-@@include('_common/footer.html')
+                        </div>
+            
+                    </div>
+
+                </div>
+                
+            </div>
+
+        </div>
+    </main>
+    
+    
+    
+    
+    @@include('_common/footer.html')

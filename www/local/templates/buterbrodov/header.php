@@ -1,13 +1,19 @@
 <?
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
-use Bitrix\Main,
-	Bitrix\Main\Page\Asset;
-	
-$context = Main\Application::getInstance()->getContext();
+use Bitrix\Main\Application, 
+	Bitrix\Main\Page\Asset,
+	Bitrix\Main\Context, 
+	Bitrix\Main\Request, 
+	Bitrix\Main\Server;
+
+$application = Application::getInstance();
+$docRoot = Application::getDocumentRoot();
+$context = Application::getInstance()->getContext();
 $request = $context->getRequest();
-$server = $context->getServer();
-$protocol = (CMain::IsHTTPS()) ? "https://" : "http://";
+$server = $context->getServer(); 
+$isHttps = $request->isHttps();
+$protocol = $isHttps ? "https://" : "http://";
 
 $rsSites = CSite::GetByID(SITE_ID);
 $arSite = $rsSites->Fetch();
@@ -30,9 +36,8 @@ if ($curPage === '/' && $ERROR_404 !== "Y")
 	$homePage = true;
 }
 
-printArr($_SERVER);
-
-
+// $arPagePath = parse_url($APPLICATION->GetCurPage(false));
+// kintArr($arPagePath['path']);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -92,7 +97,7 @@ printArr($_SERVER);
 	<div class="wrapper <?$APPLICATION->ShowViewContent('pageClasses');?>">
 
 
-		<?if($ERROR_404!="Y"):?>
+	<?if($ERROR_404!="Y"):?>
 		<div class="header__top anim-repeat" data-hs="fade down zoom-in" style="--hs-translate-ratio: 5;">
 			<div class="header__top-logo">
 				<a class="header__top-logo-link" href="/">
@@ -104,20 +109,30 @@ printArr($_SERVER);
 			<div class="header__top-logo-home-page anim-repeat" data-hs="fade down zoom-in" style="--hs-translate-ratio: 5;">
 				<img src="<?=SITE_TEMPLATE_PATH?>/assets/img/logo_sun.svg" alt="">
 			</div>
-			<?else:?>
-			<div class="header__top-back-button anim-repeat" data-hs="fade down zoom-in" style="--hs-translate-ratio: 5;">
-				<a href="/" class="btn back-button-catalog">
+			<?endif?>
+		</div>
+
+		<?if(!$homePage):?>
+			<div class="header__back-button anim-repeat" data-hs="fade down zoom-in" style="--hs-translate-ratio: 5;">
+
+				<?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "top_back_button", Array(
+					"START_FROM" => "0",
+					"PATH" => "",
+					"SITE_ID" => "s2",
+				), false);?>
+
+
+
+				<!-- <a href="/" class="btn back-button-catalog">
 					<img src="<?=SITE_TEMPLATE_PATH?>/assets/img/icons/arrow-left.svg" alt="←" class="icon">
 					<span class="d-none d-lg-block">Все бренды</span>
 				</a>
 				<a href="/" class="btn back-button-general">
 					<img src="<?=SITE_TEMPLATE_PATH?>/assets/img/icons/arrow-left.svg" alt="←" class="icon">
 					<span class="d-none d-lg-block">Назад</span>
-				</a>
+				</a> -->
 			</div>
-			<?endif?>
-			
-		</div>
+		<?endif?>
 		
 		<div class="header__menu-btn menu_open anim-repeat" data-hs="fade down zoom-in" style="--hs-translate-ratio: 5;">
 			<img src="<?=SITE_TEMPLATE_PATH?>/assets/img/icons/menu.svg" alt="menu" class="d-none d-lg-block">
@@ -160,7 +175,7 @@ printArr($_SERVER);
 							"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
 							"MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
 							"MAX_LEVEL" => "1",	// Уровень вложенности меню
-							"CHILD_MENU_TYPE" => "gostinydvor_menu",	// Тип меню для остальных уровней
+							"CHILD_MENU_TYPE" => "",	// Тип меню для остальных уровней
 							"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
 							"DELAY" => "N",	// Откладывать выполнение шаблона меню
 							"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
@@ -178,7 +193,7 @@ printArr($_SERVER);
 						<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH."/include/header/categories_title.php", Array(), Array(
 							"MODE"      => "html",
 							"NAME"      => "categories title",
-							"TEMPLATE"  => "text_include_template.php"
+							"TEMPLATE"  => ""
 						));?>
 					</div>
 
@@ -217,14 +232,14 @@ printArr($_SERVER);
 						<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH."/include/header/copyright.php", Array(), Array(
 							"MODE"      => "html",
 							"NAME"      => "copyright",
-							"TEMPLATE"  => "text_include_template.php"
+							"TEMPLATE"  => ""
 						));?>
 					</div>
 					<div class="header__contacts-item">
 						<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH."/include/header/phone.php", Array(), Array(
 							"MODE"      => "html",
 							"NAME"      => "phone",
-							"TEMPLATE"  => "text_include_template.php"
+							"TEMPLATE"  => ""
 						));?>
 					</div>
 				</div>
@@ -232,19 +247,20 @@ printArr($_SERVER);
 
 			</div>
 		</header>
-		<?endif?>
+	<?endif?>
 
-		<?if($homePage):?>
+	<?if($homePage):?>
 		<div class="parallax">
 		<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH."/include/home_page/home_page_content.php", Array(), Array(
-			"MODE"      => "html",
+			"MODE"      => "php",
 			"NAME"      => "",
-			"TEMPLATE"  => "text_include_template.php"
+			"TEMPLATE"  => ""
 		));?>
-		<?endif?>
+	<?endif?>
+
+
+<?$APPLICATION->ShowViewContent('content_open_divs');?>
 
 
 
-
-<?//$APPLICATION->ShowViewContent('...');?>
 

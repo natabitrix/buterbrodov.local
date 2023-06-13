@@ -1,11 +1,35 @@
-
-
-
-
 @@include('footer_only.html')
 
 
 
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="feedbackFormModal" tabindex="-1" aria-labelledby="feedbackFormModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <button type="button" class="modal-close btn btn-simple" data-bs-dismiss="modal" aria-label="x"><img src="@img/icons/modal_close.svg" alt="x"></button>
+            <div class="modal-body">
+                <h5 class="modal-title" id="feedbackFormModalLabel">Поделись впечатлениями о продукте</h5>
+                <form action="" class="form">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control sm" id="input1" placeholder="имя">
+                        <label for="input1">имя</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea name="" id="input2" style="height: 180px" class="form-control"
+                            placeholder="Поделись впечатлениями о продукте"></textarea>
+                        <label for="input2" class="form-label">Поделись впечатлениями о продукте</label>
+                    </div>
+
+
+                    <input type="submit" value="Отправить" class="btn btn__black">
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 
