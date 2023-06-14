@@ -16,7 +16,7 @@ $APPLICATION->AddViewContent("pageClasses", "news-list-page");
 
 <main class="main">
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-lg-4 col-xxxl-3 order-1 order-lg-0 col-decor">
                 <div class="col-sticky sticky-wrapper">

@@ -43,7 +43,7 @@ $APPLICATION->SetTitle("Title");
 		"DISPLAY_PREVIEW_TEXT" => "N",
 		"USE_SHARE" => "N",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"LIST_ACTIVE_DATE_FORMAT" => "FULL",
 		"LIST_FIELD_CODE" => array(
 			0 => "DETAIL_PICTURE",
 			1 => "",
@@ -65,9 +65,10 @@ $APPLICATION->SetTitle("Title");
 			1 => "",
 		),
 		"DETAIL_PROPERTY_CODE" => array(
-			0 => "SOSTAV",
-			1 => "IMAGE",
-			2 => "",
+			0 => "",
+			1 => "SOSTAV",
+			2 => "IMAGE",
+			3 => "",
 		),
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "N",
@@ -94,8 +95,9 @@ $APPLICATION->SetTitle("Title");
 			1 => "",
 		),
 		"FILTER_PROPERTY_CODE" => array(
-			0 => "PRODUCT_TYPE",
+			0 => "",
 			1 => "",
+			2 => "",
 		),
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",

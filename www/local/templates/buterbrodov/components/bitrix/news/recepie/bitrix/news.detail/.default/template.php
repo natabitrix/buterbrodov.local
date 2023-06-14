@@ -18,7 +18,8 @@ $this->setFrameMode(true);
 
 <?$this->SetViewTarget('top_content');?>
 <div class="recepie-detail__top-img">
-	<?$img = CFile::ResizeImageGet($arResult["DETAIL_PICTURE"],array("width" => 1440, "height" => 615),BX_RESIZE_IMAGE_PROPORTIONAL)?>
+	<?$img_source = $arResult["DETAIL_PICTURE"] ? $arResult["DETAIL_PICTURE"] : $arResult['PROPERTIES']['IMAGE']['VALUE']?>
+	<?$img = CFile::ResizeImageGet($img_source, array("width" => 1440, "height" => 615),BX_RESIZE_IMAGE_PROPORTIONAL)?>
 	<img src="<?=$img['src']?>" alt="<?=$arResult["NAME"]?>">
 </div>
 <div class="recepie-detail__top-text">

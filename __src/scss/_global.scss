@@ -2833,7 +2833,7 @@ $topHeaderMobileHeight: 70px;
 		}
 
 		&__text-block {
-			padding: 22px 32px 38px;
+			padding: 22px 24px 24px;
 
 			@include media-breakpoint-up(lg) {
 				padding: 32px 32px 38px;
@@ -2920,7 +2920,7 @@ $topHeaderMobileHeight: 70px;
 				height: 332px;
 			}
 
-			@include media-breakpoint-up(xl) {
+			@include media-breakpoint-up(xxxxl) {
 				width: 390px;
 				height: 430px;
 			}
@@ -2951,6 +2951,9 @@ $topHeaderMobileHeight: 70px;
 		.container {
 			padding: 0;
 			max-width: 1040px;
+			@include media-breakpoint-up(xxxl) {
+				max-width: 1240px;
+			}
 		}
 		img {
 			width: 100%;
@@ -2966,6 +2969,9 @@ $topHeaderMobileHeight: 70px;
 		}
 		.container {
 			max-width: 874px;
+			@include media-breakpoint-up(xxxl) {
+				max-width: 1074px;
+			}
 		}
 		&-date {
 			font-weight: 400;
@@ -3155,7 +3161,7 @@ $topHeaderMobileHeight: 70px;
 				height: 275px;
 			}
 
-			@include media-breakpoint-up(xl) {
+			@include media-breakpoint-up(xxxxl) {
 				width: 411px;
 				height: 376px;
 

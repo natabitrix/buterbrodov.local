@@ -27,7 +27,7 @@ $this->setFrameMode(true);
 		//printArr($arItem);
 		?>
 
-		<div class="recepie-list-item col-md-6 col-xxxl-4" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+		<div class="recepie-list-item <?=$arParams['COL_CLASS']?> col-md-6" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 
 			<div class="recepie-list-item__wrapper">
 				<div class="recepie-list-item__inner">
