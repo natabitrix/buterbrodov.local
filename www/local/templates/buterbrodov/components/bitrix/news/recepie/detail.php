@@ -121,7 +121,7 @@ $APPLICATION->AddViewContent("pageClasses", "recepie-detail-page");
 									"PARENT_SECTION" => $arResult["VARIABLES"]["SECTION_ID"],
 									"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 									"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-									"NEWS_COUNT" => $arParams["NEWS_COUNT"],
+									"NEWS_COUNT" => 2,
 									// "SORT_BY1" => $arParams["SORT_BY1"],
 									// "SORT_ORDER1" => $arParams["SORT_ORDER1"],
 									// "SORT_BY2" => $arParams["SORT_BY2"],

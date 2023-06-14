@@ -166,11 +166,12 @@ $this->setFrameMode(true);
 			</div>
 
 			<div class="catalog-detail__share-btn">
-			<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#feedbackFormModal">
-				<img src="<?=SITE_TEMPLATE_PATH?>/assets/img/icons/message.svg" alt="message" class="icon">Поделиться впечатлением</a>
-			</button>
-			
+				<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#feedbackFormModal">
+					<img src="<?=SITE_TEMPLATE_PATH?>/assets/img/icons/message.svg" alt="message" class="icon">Поделиться впечатлением</a>
+				</button>
+			</div>
 		</div>
+		
 	</div>
 </div>
 

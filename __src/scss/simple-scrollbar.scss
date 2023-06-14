@@ -4,7 +4,7 @@
     height: 100%;
     position: relative;
     z-index: 1;
-    float: left;
+    // float: left;
 }
 
 .ss-content {
@@ -16,7 +16,16 @@
     overflow: auto;
     overflow-x: hidden;
     box-sizing: border-box;
+    // .ss-horizontal & {
+    //     overflow-y: hidden;
+    //     overflow-x: auto;
+    //     width: calc(100%);
+    //     height: calc(100% + 18px);
+    //     padding: 20px 20px;
+    // }
 }
+
+
 
 .ss-content.rtl {
     width: calc(100% + 18px);

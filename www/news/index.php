@@ -16,9 +16,9 @@ $APPLICATION->SetTitle("Title");
 		"USE_RATING" => "N",
 		"USE_CATEGORIES" => "N",
 		"USE_FILTER" => "Y",
-		"SORT_BY1" => "SORT",
-		"SORT_ORDER1" => "ASC",
-		"SORT_BY2" => "ID",
+		"SORT_BY1" => "PROPERTY_DATE",
+		"SORT_ORDER1" => "DESC",
+		"SORT_BY2" => "ACTIVE_FROM",
 		"SORT_ORDER2" => "DESC",
 		"CHECK_DATES" => "Y",
 		"SEF_MODE" => "Y",
@@ -97,7 +97,6 @@ $APPLICATION->SetTitle("Title");
 		"FILTER_PROPERTY_CODE" => array(
 			0 => "",
 			1 => "",
-			2 => "",
 		),
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",

@@ -12,7 +12,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-$APPLICATION->AddViewContent("pageClasses", "catalog-detail-page");
+$APPLICATION->AddViewContent("pageClasses", "catalog-page catalog-detail-page");
 ?>
 
 <main class="main catalog-detail">

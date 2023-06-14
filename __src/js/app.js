@@ -28,10 +28,10 @@ $(document).on("ready", function () {
         observeParents: true,
         observer: true,
 
-        // autoplay: {
-        //     delay: 2500,
-        //     disableOnInteraction: true,
-        // },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: true,
+        },
 
     });
 
@@ -208,10 +208,6 @@ $(document).on("ready", function () {
         }
     });
 
-
-
-
-
     var productDetailSliderThumbs = new Swiper(".catalog-detail__slider-thumbs", {
         spaceBetween: 10,
         slidesPerView: 4,
@@ -234,6 +230,7 @@ $(document).on("ready", function () {
             }
         }
     });
+
     var productDetailSlider = new Swiper(".catalog-detail__slider", {
         // spaceBetween: 10,
         // navigation: {
@@ -245,7 +242,28 @@ $(document).on("ready", function () {
         },
     });
 
-    // Fire regular DSOS
+    const aboutSlider = new Swiper('.about_slider', {
+
+        loop: true,
+        // navigation: {
+        //     nextEl: '.about_slider__swiper-navigation .swiper-button-next',
+        //     prevEl: '.about_slider__swiper-navigation .swiper-button-prev',
+        // },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: true,
+        },
+        speed: 1000,
+        preloadImages: false,
+        checkInView: false,
+        lazy: true,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: 4
+
+    });
+
+
     const scrollAnimate = new HumbleScroll({
         enableCallback: true,
         repeat: false,
@@ -257,13 +275,14 @@ $(document).on("ready", function () {
         // },
     })
 
-
     const repeatAnim = new HumbleScroll({
         // root: document.querySelector('.header'),
         element: '.anim-repeat',
         repeat: true,
         mirror: true,
     })
+
+    
 
 
     function getScrollBarWidth() {
