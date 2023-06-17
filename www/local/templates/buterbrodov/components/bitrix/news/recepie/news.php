@@ -28,6 +28,7 @@ $APPLICATION->AddViewContent("pageClasses", "recepie-list-page");
                         "recepie_list",
                         array(
                             "PARENT_SECTION" => $arResult["VARIABLES"]["SECTION_ID"],
+                            "COL_LG_CLASS" => "col-lg-12",
                             "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
                             "IBLOCK_ID" => $arParams["IBLOCK_ID"],
                             "NEWS_COUNT" => $arParams["NEWS_COUNT"],

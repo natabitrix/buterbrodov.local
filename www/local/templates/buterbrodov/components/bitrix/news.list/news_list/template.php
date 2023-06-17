@@ -13,40 +13,52 @@
 $this->setFrameMode(true);
 ?>
 
-<div class="row">
-<?foreach($arResult["ITEMS"] as $arItem):?>
-	<?
-	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+<div class="ajax-container">
+	<div class="row ajax-items">
+	<?foreach($arResult["ITEMS"] as $arItem):?>
+		<?
+		$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+		$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 
-	$date = $arItem['PROPERTIES']['DATE']['VALUE'] ? $arItem['PROPERTIES']['DATE']['VALUE'] : ($arItem['ACTIVE_FROM'] ? $arItem['ACTIVE_FROM'] : false);
-	$img = $arItem['PROPERTIES']['IMAGE']['VALUE'] ? CFile::ResizeImageGet($arItem['PROPERTIES']['IMAGE']['VALUE'],array("width" => 402, "height" => 263),BX_RESIZE_IMAGE_EXACT) : false;
-	//printArr($arItem);
-	?>
-	<div class="news-list-item <?=$arParams['COL_CLASS']?> col-md-6" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-		<div class="news-list-item__inner">
-			<div class="news-list-item__img-block">
-			<?if($img):?>
-				<img src="<?=$img['src']?>" alt="<?=$arItem['NAME']?>" class="img-fluid">
-			<?endif?>
-			</div>
-
-			<div class="news-list-item__text-block">
-				<?if($date):?>
-				<div class="date">
-				<?=FormatDate('j F, Y', strtotime($date))?>
-				</div>
+		$date = $arItem['PROPERTIES']['DATE']['VALUE'] ? $arItem['PROPERTIES']['DATE']['VALUE'] : ($arItem['ACTIVE_FROM'] ? $arItem['ACTIVE_FROM'] : false);
+		$img = $arItem['PROPERTIES']['IMAGE']['VALUE'] ? CFile::ResizeImageGet($arItem['PROPERTIES']['IMAGE']['VALUE'],array("width" => 402, "height" => 263),BX_RESIZE_IMAGE_EXACT) : false;
+		//printArr($arItem);
+		?>
+		<div class="news-list-item col-md-6 <?=$arParams['COL_LG_CLASS']?> col-xl-6 ajax-item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+			<div class="news-list-item__inner">
+				<div class="news-list-item__img-block">
+				<?if($img):?>
+					<img src="<?=$img['src']?>" alt="<?=$arItem['NAME']?>" class="img-fluid">
 				<?endif?>
-				
-				<h3 class="h3"><a href="<?=$arItem['DETAIL_PAGE_URL']?>"><?=$arItem['NAME']?></a></h3>
+				</div>
 
-				<div class="text">
-				<?=$arItem['PREVIEW_TEXT']?>
+				<div class="news-list-item__text-block">
+					<?if($date):?>
+					<div class="date">
+					<?=FormatDate('j F, Y', strtotime($date))?>
+					</div>
+					<?endif?>
+					
+					<h3 class="h3"><a href="<?=$arItem['DETAIL_PAGE_URL']?>"><?=$arItem['NAME']?></a></h3>
+
+					<div class="text">
+					<?=$arItem['PREVIEW_TEXT']?>
+					</div>
 				</div>
 			</div>
 		</div>
+
+		<?endforeach;?>
 	</div>
 
-	<?endforeach;?>
+
+
+<?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
+	<div class="load-more-container text-center mt-5">
+		<?=$arResult["NAV_STRING"]?>
+	</div>
+<?endif;?>
 </div>
+
+
 

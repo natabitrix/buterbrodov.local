@@ -6,8 +6,8 @@ $APPLICATION->SetTitle("О компании");
 
 
 <?$APPLICATION->IncludeComponent("bitrix:news.detail", "about-page", Array(
-		"IBLOCK_ID" => 25,	// Код информационного блока
-		"ELEMENT_ID" => 78548,	// ID новости
+		"IBLOCK_ID" => intval($GLOBALS['SITE_VARIABLES']['IBLOCK_ID_ABOUT']),	// Код информационного блока
+		"ELEMENT_ID" => intval($GLOBALS['SITE_VARIABLES']['ELEMENT_ID_ABOUT']),	// ID новости
 		"COMPONENT_TEMPLATE" => ".default",
 		"IBLOCK_TYPE" => "",	// Тип информационного блока (используется только для проверки)
 		"ELEMENT_CODE" => "",	// Код новости

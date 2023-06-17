@@ -14,6 +14,8 @@
 	</main>
 <?endif?>
 
+<?//printArr($GLOBALS['SITE_VARIABLES']);?>
+
 
 <?if($ERROR_404!="Y"):?>
 	<footer class="footer">
@@ -41,7 +43,7 @@
 
 								<?$APPLICATION->IncludeComponent("bitrix:news.list", "socnet_links", Array(
 									"COMPONENT_TEMPLATE" => "",
-										"IBLOCK_ID" => "22",	// Код информационного блока
+										"IBLOCK_ID" => intval($GLOBALS['SITE_VARIABLES']['IBLOCK_ID_SOCIALS']),	// Код информационного блока
 										"NEWS_COUNT" => "10",	// Количество новостей на странице
 										"SORT_BY1" => "SORT",	// Поле для первой сортировки новостей
 										"SORT_ORDER1" => "ASC",	// Направление для первой сортировки новостей
@@ -163,7 +165,7 @@
 			"AUTO_SAVE" => "Y",	// Сохранять автоматически факт согласия
 			"COMPOSITE_FRAME_MODE" => "A",	// Голосование шаблона компонента по умолчанию
 			"COMPOSITE_FRAME_TYPE" => "AUTO",	// Содержимое компонента
-			"ID" => "1",	// Соглашение
+			"ID" => intval($GLOBALS['SITE_VARIABLES']['AGREEMENT_ID_COOKIE']),	// Соглашение
 			"IS_CHECKED" => "N",	// Галка согласия проставлена по умолчанию
 			"IS_LOADED" => "Y",	// Загружать текст соглашения сразу
 			"COMPONENT_TEMPLATE" => ".default"
@@ -184,7 +186,7 @@
             <div class="modal-body">
 				<div class="feedback_product__form form-placeholder">
 					<?$APPLICATION->IncludeComponent("bitrix:form.result.new", "feedback_product_modal", Array(
-							"WEB_FORM_ID" => "2",	// ID веб-формы
+							"WEB_FORM_ID" => intval($GLOBALS['SITE_VARIABLES']['WEBFORM_ID_FEEDBACK']),	// ID веб-формы
 							"COMPONENT_TEMPLATE" => "feedback_product_modal",
 							"IGNORE_CUSTOM_TEMPLATE" => "N",	// Игнорировать свой шаблон
 							"USE_EXTENDED_ERRORS" => "Y",	// Использовать расширенный вывод сообщений об ошибках

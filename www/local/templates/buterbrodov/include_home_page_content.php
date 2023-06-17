@@ -1,13 +1,13 @@
-
 <?/***главный слайдер************/?>
 <section class="main_slider__wrapper parallax__group" style="z-index:2">
+
 
 	<?$APPLICATION->IncludeComponent("bitrix:news.list", "main_slider", Array(
 		"COMPONENT_TEMPLATE" => "",
 			"PARENT_SECTION_CODE" => "glavnaya",	// Код раздела
 			"PARENT_SECTION" => "",	// ID раздела
 			"IBLOCK_TYPE" => "",	// Тип информационного блока (используется только для проверки)
-			"IBLOCK_ID" => "18",	// Код информационного блока
+			"IBLOCK_ID" => intval($GLOBALS['SITE_VARIABLES']['IBLOCK_ID_HOME_SLIDER']),	// Код информационного блока
 			"NEWS_COUNT" => "999",	// Количество новостей на странице
 			"SORT_BY1" => "SORT",	// Поле для первой сортировки новостей
 			"SORT_ORDER1" => "ASC",	// Направление для первой сортировки новостей
@@ -78,8 +78,8 @@
 
 	<?/***декор************/?>
 	<?$APPLICATION->IncludeComponent("bitrix:news.detail", "home-page_decor", Array(
-			"IBLOCK_ID" => "21",	// Код информационного блока
-			"ELEMENT_ID" => 78512,	// ID новости
+			"IBLOCK_ID" => intval($GLOBALS['SITE_VARIABLES']['IBLOCK_ID_HOME_DECOR']),	// Код информационного блока
+			"ELEMENT_ID" => intval($GLOBALS['SITE_VARIABLES']['ELEMENT_ID_HOME_DECOR']),	// ID новости
 			"COMPONENT_TEMPLATE" => ".default",
 			"IBLOCK_TYPE" => "buterbrodov",	// Тип информационного блока (используется только для проверки)
 			"ELEMENT_CODE" => "",	// Код новости
@@ -154,7 +154,7 @@
 					"VIEW_MODE" => "TEXT",	// Вид списка подразделов
 					"SHOW_PARENT_NAME" => "Y",	// Показывать название раздела
 					"IBLOCK_TYPE" => "",	// Тип инфоблока
-					"IBLOCK_ID" => "17",	// Инфоблок
+					"IBLOCK_ID" => intval($GLOBALS['SITE_VARIABLES']['IBLOCK_ID_CATALOG']),	// Инфоблок
 					"SECTION_ID" => $_REQUEST["SECTION_ID"],	// ID раздела
 					"SECTION_CODE" => "",	// Код раздела
 					"SECTION_URL" => "",	// URL, ведущий на страницу с содержимым раздела
@@ -193,7 +193,7 @@
 	<?$APPLICATION->IncludeComponent("bitrix:news.list", "news_list_slider", Array(
 		"COMPONENT_TEMPLATE" => "",
 			"IBLOCK_TYPE" => "",	// Тип информационного блока (используется только для проверки)
-			"IBLOCK_ID" => "19",	// Код информационного блока
+			"IBLOCK_ID" => intval($GLOBALS['SITE_VARIABLES']['IBLOCK_ID_NEWS']),	// Код информационного блока
 			"NEWS_COUNT" => "10",	// Количество новостей на странице
 			"SORT_BY1" => "DESC",	// Поле для первой сортировки новостей
 			"SORT_ORDER1" => "ACTIVE_FROM",	// Направление для первой сортировки новостей
@@ -278,7 +278,7 @@
 	<?$APPLICATION->IncludeComponent("bitrix:news.list", "recepie_list_slider", Array(
 		"COMPONENT_TEMPLATE" => "",
 			"IBLOCK_TYPE" => "",	// Тип информационного блока (используется только для проверки)
-			"IBLOCK_ID" => "20",	// Код информационного блока
+			"IBLOCK_ID" => intval($GLOBALS['SITE_VARIABLES']['IBLOCK_ID_RECEPIE']),	// Код информационного блока
 			"NEWS_COUNT" => "10",	// Количество новостей на странице
 			"SORT_BY1" => "SORT",	// Поле для первой сортировки новостей
 			"SORT_ORDER1" => "ASC",	// Направление для первой сортировки новостей

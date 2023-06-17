@@ -1,45 +1,12 @@
 import 'bootstrap';
 
 import Swiper, { Navigation, Autoplay, EffectCoverflow, EffectFade, Thumbs } from 'swiper';
-// import { escapeSelector } from "jquery";
 Swiper.use([Navigation, Autoplay, EffectCoverflow, EffectFade, Thumbs]);
-
 import SimpleScrollbar from 'simple-scrollbar';
 
 $(document).on("ready", function () {
 
-    const mainSlider = new Swiper('.main_slider', {
-        effect: 'fade',
-        fadeEffect: {
-            crossFade: true
-        },
-        slidesPerView: 1,
-        loop: true,
-        centeredSlides: false,
-        navigation: {
-            nextEl: '.main_slider .swiper-button-next',
-            prevEl: '.main_slider .swiper-button-prev',
-        },
-        speed: 1000,
-        preloadImages: false,
-        checkInView: false,
-        lazy: true,
-
-        observeParents: true,
-        observer: true,
-
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: true,
-        },
-
-    });
-
-    // mainSlider.on('slideChange', function () {
-    //     console.log('slide changed');
-    // });
-
-
+    /** Swiper слайдеры */
     function myPlugin({ swiper, extendParams, on }) {
         extendParams({
             debugger: false,
@@ -103,6 +70,33 @@ $(document).on("ready", function () {
             console.log('reachEnd');
         });
     }
+
+    const mainSlider = new Swiper('.main_slider', {
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
+        slidesPerView: 1,
+        loop: true,
+        centeredSlides: false,
+        navigation: {
+            nextEl: '.main_slider .swiper-button-next',
+            prevEl: '.main_slider .swiper-button-prev',
+        },
+        speed: 1000,
+        preloadImages: false,
+        checkInView: false,
+        lazy: true,
+
+        observeParents: true,
+        observer: true,
+
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: true,
+        },
+
+    });
 
     const newsSlider = new Swiper('.news_slider', {
         modules: [myPlugin],
@@ -264,6 +258,7 @@ $(document).on("ready", function () {
     });
 
 
+    /** анимация элементов при прокрутке окна */
     const scrollAnimate = new HumbleScroll({
         enableCallback: true,
         repeat: false,
@@ -282,18 +277,8 @@ $(document).on("ready", function () {
         mirror: true,
     })
 
-    
 
-
-    function getScrollBarWidth() {
-        let el = document.createElement("div");
-        el.style.cssText = "overflow:scroll; visibility:hidden; position:absolute;";
-        document.body.appendChild(el);
-        let width = el.offsetWidth - el.clientWidth;
-        el.remove();
-        return width;
-    }
-
+    /** вывод bootstrap breakpoint [для разработки]*/
     function getBreakpoint(windowWidth) {
         var grid_breakpoints = [
             ['xxs', 0],
@@ -318,7 +303,6 @@ $(document).on("ready", function () {
 
         return breakpoint;
     }
-
     function showBreakpoint() {
         // $('body').append('<div id="show_breakpoint" style="position:fixed;top:2px;left:5px;z-index:1000;"></div>');
         $('#show_breakpoint').text('up(' + getBreakpoint($(document).innerWidth()) + ')');
@@ -326,7 +310,10 @@ $(document).on("ready", function () {
             $('#show_breakpoint').text('up(' + getBreakpoint($(document).innerWidth()) + ')');
         });
     }
+    showBreakpoint();
 
+
+    /** кнопка прокрутки наверх */
     function scrollTopButton() {
         const btn = document.getElementById("scrollTopBtn");
         if (btn) {
@@ -364,8 +351,10 @@ $(document).on("ready", function () {
             });
         }
     }
+    scrollTopButton();
 
 
+    /** добавляет класс когда элемент находится в видимой части экрана для отложенной css анимации */
     Array.prototype.forEach.call(document.querySelectorAll(".animate-in-view"), function (element) {
         const observer = new IntersectionObserver(entries => {
             element.classList.toggle('in-view', entries[0].isIntersecting);
@@ -374,15 +363,17 @@ $(document).on("ready", function () {
     });
 
 
-
-    showBreakpoint();
-
-    scrollTopButton();
-
+    /** открытие/закрытие главного фулл-скрин меню*/
+    function getScrollBarWidth() {
+        let el = document.createElement("div");
+        el.style.cssText = "overflow:scroll; visibility:hidden; position:absolute;";
+        document.body.appendChild(el);
+        let width = el.offsetWidth - el.clientWidth;
+        el.remove();
+        return width;
+    }
     var scrollBarWidth = getScrollBarWidth();
-
     $('.menu_close').css('margin-right', scrollBarWidth);
-
     $('.menu_open').on("click", function () {
 
         $('body').addClass('menu_opened');
@@ -394,7 +385,6 @@ $(document).on("ready", function () {
 
 
     });
-
     $('.menu_close').on("click", function () {
 
         $('body').removeClass('menu_opened');
@@ -403,7 +393,7 @@ $(document).on("ready", function () {
     });
 
 
-
+    /** анимация печатающийся текст */
     var anim_letters_elem = $('.animations__speak');
     anim_letters_elem.each(function () {
         var s = $.trim($(this).text());
@@ -415,29 +405,32 @@ $(document).on("ready", function () {
         $(this).html(new_html);
     });
 
+
+    /** поднятие наверх лого и коровы на главной при прокрутке параллакса */
     $(".parallax").on("scroll", function () {
         $('.main_slider .animations__decor').css({ 'bottom': $(this).scrollTop() * 0.3 })
         $('.header__top-logo-home-page').css({ 'top': $(this).scrollTop() * -1 })
     });
 
+
+    /** фиксированые коровы в новостях и рецептах */
     $(window).on("scroll", function () {
         var footer_margin = 170;
-        // var footer_margin = 0;
         var footer_full_height = $(".footer").outerHeight() + footer_margin;
         var is_scroll_on_footer = $(window).scrollTop() >= $(document).height() - $(window).height() - footer_full_height;
         var sticky = $('.sticky');
         var sticky_wrapper = $('.sticky-wrapper');
         if (is_scroll_on_footer) {
-            sticky.css({ 'position': 'absolute' });
+            if($('body').hasClass('ajax-items-loaded-all')) //ждем пока все аякс элементы не подргрузятся
+                sticky.css({ 'position': 'absolute' });
             // sticky_wrapper.css({'height':'100%'});
         } else {
             // $('.col-sticky .animations__decor').css({'bottom':-$(this).scrollTop()})
             sticky.css({ 'position': 'fixed' });
             // sticky_wrapper.css({'height':'calc(100vh - 118px)'});
         }
-
-
     });
+
 
     // function toggleProductIcons(container) {
     //     var i = 0;
@@ -458,17 +451,15 @@ $(document).on("ready", function () {
     // $('.product-list__item').each(function () {
     //     toggleProductIcons($(this));
     // });
-    
 
 
-
-
+    /** смена штрихкода в товаре в списке при переключении табов */
     $('.product-list__item-switcher button[data-bs-toggle="pill"]').on('show.bs.tab', function (event) {
         $(this).parents('.product-list__item').find('.product-list__item-code span').text($(this).data('barcode'));
     })
 
 
-
+    /** прелоадер */
     window.onload = function () {
         window.setTimeout(function () {
             document.body.classList.add('loaded_hiding');
@@ -494,4 +485,7 @@ $(document).on("ready", function () {
 
         }, 800);
     }
+
+
+
 });

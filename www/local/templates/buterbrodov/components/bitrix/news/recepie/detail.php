@@ -117,7 +117,7 @@ $APPLICATION->AddViewContent("pageClasses", "recepie-detail-page");
 								"bitrix:news.list",
 								"recepie_list",
 								Array(
-									"COL_CLASS" => "col-md-6",
+									"COL_LG_CLASS" => "col-lg-12",
 									"PARENT_SECTION" => $arResult["VARIABLES"]["SECTION_ID"],
 									"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 									"IBLOCK_ID" => $arParams["IBLOCK_ID"],

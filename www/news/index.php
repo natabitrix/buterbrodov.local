@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Title");
+$APPLICATION->SetTitle("Новости");
 ?>
 
 <?$APPLICATION->IncludeComponent(
@@ -9,8 +9,8 @@ $APPLICATION->SetTitle("Title");
 	array(
 		"COMPONENT_TEMPLATE" => "news",
 		"IBLOCK_TYPE" => "buterbrodov",
-		"IBLOCK_ID" => "19",
-		"NEWS_COUNT" => "20",
+		"IBLOCK_ID" => intval($GLOBALS['SITE_VARIABLES']['IBLOCK_ID_NEWS']),
+		"NEWS_COUNT" => "2",
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",
 		"USE_RATING" => "N",
@@ -65,19 +65,18 @@ $APPLICATION->SetTitle("Title");
 			1 => "",
 		),
 		"DETAIL_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "SOSTAV",
-			2 => "IMAGE",
-			3 => "",
+			0 => "DATE",
+			1 => "IMAGE",
+			2 => "",
 		),
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "N",
 		"DETAIL_PAGER_TITLE" => "Страница",
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_SHOW_ALL" => "N",
-		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TEMPLATE" => "show_more_scroll",
 		"DISPLAY_TOP_PAGER" => "N",
-		"DISPLAY_BOTTOM_PAGER" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"PAGER_TITLE" => "Новости",
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_DESC_NUMBERING" => "N",

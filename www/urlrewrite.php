@@ -8,7 +8,7 @@ $arUrlRewrite=array (
     'PATH' => '/catalog/index.php',
     'SORT' => 100,
   ),
-  4 => 
+  2 => 
   array (
     'CONDITION' => '#^/recepie/#',
     'RULE' => '',
@@ -16,20 +16,12 @@ $arUrlRewrite=array (
     'PATH' => '/recepie/index.php',
     'SORT' => 100,
   ),
-  6 => 
+  1 => 
   array (
     'CONDITION' => '#^/news/#',
     'RULE' => '',
     'ID' => 'bitrix:news',
     'PATH' => '/news/index.php',
-    'SORT' => 100,
-  ),
-  5 => 
-  array (
-    'CONDITION' => '#^#',
-    'RULE' => '',
-    'ID' => 'bitrix:form.result.new',
-    'PATH' => '/local/templates/buterbrodov/footer.php',
     'SORT' => 100,
   ),
 );

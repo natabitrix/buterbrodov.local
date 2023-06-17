@@ -36,8 +36,13 @@ if ($curPage === '/' && $ERROR_404 !== "Y")
 	$homePage = true;
 }
 
+if (file_exists($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/HL_helpers.php")) {
+	require_once($_SERVER["DOCUMENT_ROOT"] . "/local/php_interface/HL_helpers.php");
+}
+
 // $arPagePath = parse_url($APPLICATION->GetCurPage(false));
 // kintArr($arPagePath['path']);
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -72,11 +77,23 @@ if ($curPage === '/' && $ERROR_404 !== "Y")
 	var curPage = '<?=$APPLICATION->GetCurPage(false)?>';
 	var admin = <?if($USER && $USER->IsAdmin()):?>true<?else:?>false<?endif?>;
 	</script>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
+	<link rel="shortcut icon" href="https://buterbrodov.com/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="https://buterbrodov.com/favicon.ico" type="image/x-icon">
 
 </head>
 
 <body<?if($homePage):?> class="home-page"<?endif?>>
 
+<?//if($_SERVER['REMOTE_ADDR'] == '109.106.139.64_'):?>
+<div id="show_breakpoint" style="position:fixed;top:2px;left:5px;z-index:1000;"></div>
+<?//endif?>
 
 <div class="loader">
     <div class="loader-pacman">
@@ -91,8 +108,9 @@ if ($curPage === '/' && $ERROR_404 !== "Y")
 </div>
 
 
+<?if($request->get("IS_AJAX") != "Y"):?>
 <?include($_SERVER['DOCUMENT_ROOT'].'/local/php_interface/admin_panel.php');?>
-
+<?endif?>
 
 	<div class="wrapper <?$APPLICATION->ShowViewContent('pageClasses');?>">
 
@@ -121,8 +139,6 @@ if ($curPage === '/' && $ERROR_404 !== "Y")
 					"SITE_ID" => "s2",
 				), false);?>
 
-
-
 				<!-- <a href="/" class="btn back-button-catalog">
 					<img src="<?=SITE_TEMPLATE_PATH?>/assets/img/icons/arrow-left.svg" alt="←" class="icon">
 					<span class="d-none d-lg-block">Все бренды</span>
@@ -148,7 +164,7 @@ if ($curPage === '/' && $ERROR_404 !== "Y")
 
 			<div class="decor">
 				<div class="header__decor-left anim-repeat" data-hs-="fade" style="--hs-delay: 0ms; --hs-translate-ratio: 10; ">
-					<img src="<?=SITE_TEMPLATE_PATH?>/assets/img/home-page/decor-slider.png" alt="">
+					<img src="<?=SITE_TEMPLATE_PATH?>/assets/img/decor/leaf1.png" alt="">
 				</div>
 
 				<div class="decor-left header__bg-decor-left1 anim-repeat"  data-hs-="fade  " style="--hs-delay: 300ms; --hs-translate-ratio: 10; ">
@@ -205,7 +221,7 @@ if ($curPage === '/' && $ERROR_404 !== "Y")
 									"VIEW_MODE" => "TEXT",	// Вид списка подразделов
 									"SHOW_PARENT_NAME" => "Y",	// Показывать название раздела
 									"IBLOCK_TYPE" => "",	// Тип инфоблока
-									"IBLOCK_ID" => "17",	// Инфоблок
+									"IBLOCK_ID" => intval($GLOBALS['SITE_VARIABLES']['IBLOCK_ID_CATALOG']),	// Инфоблок
 									"SECTION_ID" => $_REQUEST["SECTION_ID"],	// ID раздела
 									"SECTION_CODE" => "",	// Код раздела
 									"SECTION_URL" => "",	// URL, ведущий на страницу с содержимым раздела
@@ -249,17 +265,15 @@ if ($curPage === '/' && $ERROR_404 !== "Y")
 		</header>
 	<?endif?>
 
-	<?if($homePage):?>
+	<?if($homePage):
+		/**parallax должен закрыться под футером */
+		?>
 		<div class="parallax">
-		<?$APPLICATION->IncludeFile(SITE_TEMPLATE_PATH."/include/home_page/home_page_content.php", Array(), Array(
-			"MODE"      => "php",
-			"NAME"      => "",
-			"TEMPLATE"  => ""
-		));?>
 	<?endif?>
 
 
-<?$APPLICATION->ShowViewContent('content_open_divs');?>
+<?/**Открывающие теги для контейнера текстовых страниц. Определены в footer.php */
+$APPLICATION->ShowViewContent('content_open_divs');?>
 
 
 

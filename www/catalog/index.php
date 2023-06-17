@@ -9,7 +9,7 @@ $APPLICATION->SetTitle("Каталог");
 	array(
 		"COMPONENT_TEMPLATE" => "catalog",
 		"IBLOCK_TYPE" => "buterbrodov",
-		"IBLOCK_ID" => "17",
+		"IBLOCK_ID" => intval($GLOBALS['SITE_VARIABLES']['IBLOCK_ID_CATALOG']),
 		"NEWS_COUNT" => "20",
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",

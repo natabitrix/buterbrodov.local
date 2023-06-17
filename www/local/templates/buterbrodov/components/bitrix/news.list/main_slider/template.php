@@ -17,7 +17,7 @@ $this->setFrameMode(true);
 <div class="main_slider swiper">
 	<div class="decor d-none d-lg-block">
 		<div class="main_slider__decor-left" data-hs="fade right" style="--hs-delay: 0ms; --hs-translate-ratio: 10; ">
-			<img src="<?=SITE_TEMPLATE_PATH?>/assets/img/home-page/decor-slider.png" alt="">
+			<img src="<?=SITE_TEMPLATE_PATH?>/assets/img/decor/leaf1.png" alt="">
 		</div>
 	</div>
 
@@ -109,6 +109,5 @@ $this->setFrameMode(true);
 	</div>
 
 </div>
-
 
 

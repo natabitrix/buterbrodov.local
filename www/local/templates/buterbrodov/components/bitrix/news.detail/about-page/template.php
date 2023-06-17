@@ -21,7 +21,6 @@ $this->setFrameMode(true);
 <?if($arResult["PROPERTIES"]["IMAGE"]["VALUE"]):?>
 	<?
 	/**дублируем слайды, иначе слайдер неверно работает */
-	$arSliders = array();
 	$arSlider = array();
 	foreach($arResult["PROPERTIES"]["IMAGE"]["VALUE"] as $key => $value)
 	{
@@ -52,8 +51,8 @@ $this->setFrameMode(true);
 <?endif?>
 
 
-<div class="container">
-	<div class="text-content">
+<div class="text-content">
+	<div class="container">
 
 		<h1><?=$arResult["NAME"]?></h1>
 		<?=$arResult["DETAIL_TEXT"]?>

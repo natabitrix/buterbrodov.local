@@ -92,7 +92,8 @@ function mymessage($message)
 			
 			<?/***Инфоблоки***/?>
 			<?
-	$arIblocks = array("17" => mymessage("CATALOG"), /*"40" => mymessage("STATI"), "3" => mymessage("PARTNERSKIE_MATERIALY")*/);
+			$IBLOCK_ID_CATALOG = intval($GLOBALS['IBLOCK_ID_CATALOG']);
+	$arIblocks = array($IBLOCK_ID_CATALOG => mymessage("CATALOG"), /*"40" => mymessage("STATI"), "3" => mymessage("PARTNERSKIE_MATERIALY")*/);
 			$isSelectedAllIblocks = !$arParams['request_iblock'] || ($arParams["request_iblock"] && count($arParams["request_iblock"]) == count($arIblocks));
 			?>
 			<div class="search-params__row d-none">

@@ -98,7 +98,7 @@ $APPLICATION->AddViewContent("pageClasses", "mews-detail-page");
 						"bitrix:news.list",
 						"news_list",
 						array(
-							"COL_CLASS" => "col-md-6",
+							"COL_LG_CLASS" => "",
 							"PARENT_SECTION" => $arResult["VARIABLES"]["SECTION_ID"],
 							"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 							"IBLOCK_ID" => $arParams["IBLOCK_ID"],

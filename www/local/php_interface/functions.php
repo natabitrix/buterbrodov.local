@@ -6,7 +6,6 @@ if (file_exists($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/autoload.php")) 
 
 
 
-
 function printArr($array, $userID = 8098, $userGroup = 1)
 {
 	global $USER;
@@ -131,4 +130,5 @@ function Picture2($img_source, $img_width, $img_height, $tablet_img_width, $mobi
 	$picture .= '</picture>';
 
 	return $picture;
+
 }
